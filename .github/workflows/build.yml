@@ -43,5 +43,5 @@ jobs:
         shell: powershell
         run: |
           .\.sonar\scanner\dotnet-sonarscanner begin /k:"210726-wvu-net-ext_P2-Group-1--Ryan-Earles--Liam-Sloan--Sean-Fitzmaurice" /o:"210726-wvu-net-ext" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
-          dotnet build .\Project2-TCG\Project2-TCG.sln
+          dotnet build .\Project2-TCG\Project2-TCG.sln 
           .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
