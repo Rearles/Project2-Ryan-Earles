@@ -5,7 +5,12 @@ using System.Threading.Tasks;
 
 namespace Project2_TCG.Models
 {
-    public class ICard
+    /// <summary>
+    /// implementation of ICardRepo
+    /// </summary>
+    public class CardRepo //: ICardRepo
     {
+
+
     }
 }
