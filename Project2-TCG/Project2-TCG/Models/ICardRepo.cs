@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Project2_TCG.Models
 {
-    interface ICardRepo
+    public interface ICardRepo
     {
         /// <summary>
         /// get a user by their name
@@ -63,6 +63,10 @@ namespace Project2_TCG.Models
         /// <param name="rarity"></param>
         /// <returns></returns>
         public List<Card> FilterCardsByRarity(Rarity rarity);
-        
+        /// <summary>
+        /// search for a user by their Id
+        /// </summary>
+        /// <param name="Id"></param>
+        public User SearchUserById(int id);
     }
 }

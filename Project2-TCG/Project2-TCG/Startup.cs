@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Project2_TCG.Models;
 using Project2_TCG.Models.Entities;
 
 namespace Project2_TCG
@@ -26,8 +27,10 @@ namespace Project2_TCG
             // In production, the Angular files will be served from this directory
 
             services.AddDbContext<cardgameContext>(
-                options => options.UseSqlServer("name=ConnectionStrings:DefaultConnection")
+                options => options.UseSqlServer("name=ConnectionStrings:petadmin")
             );
+
+            services.AddScoped<ICardRepo, CardRepo>();
 
             services.AddSpaStaticFiles(configuration =>
             {
