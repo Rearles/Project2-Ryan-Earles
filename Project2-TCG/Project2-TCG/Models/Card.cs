@@ -21,7 +21,7 @@ namespace Project2_TCG.Models
         /// <param name="name"></param>
         /// <param name="col"></param>
         /// <param name="rare"></param>
-        public Card(int id, int cost, int att, int def, string name, Color col, Rarity rare)
+        public Card(int id, int cost, int att, int def, string name, string col, string rare)
         {
             this.Id = id;
             this.Cost = cost;
@@ -31,13 +31,23 @@ namespace Project2_TCG.Models
             this.Color = col;
             this.Rarity = rare;
         }
+
+        public Card(int id, int cost, int attack, int defense, string name)
+        {
+            this.Id = id;
+            this.Cost = cost;
+            this.Attack = attack;
+            this.Defense = defense;
+            this.Name = name;
+        }
+
         public int Id { get; set; }
         public int Cost { get; set; }
         public int Attack { get; set; }
         public int Defense { get; set; }
         public string Name { get; set; }
-        public Color Color { get; set; }
-        public Rarity Rarity { get; set;  }
+        public string Color { get; set; }
+        public string Rarity { get; set;  }
         /// <summary>
         /// method for getting the image of this card
         /// </summary>
