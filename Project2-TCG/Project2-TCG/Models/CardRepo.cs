@@ -18,7 +18,7 @@ namespace Project2_TCG.Models
             _context = context;
         }
 
-        User ICardRepo.AddUser()
+        public User AddUser()
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,7 @@ namespace Project2_TCG.Models
         User ICardRepo.GetUserByName(string name)
         {
             var user = _context.Users.Single(u => u.Username.Equals(name));
-
             User foundUser = new User(user.Username, user.Password);
-
             return foundUser;
         }
 
@@ -77,7 +75,6 @@ namespace Project2_TCG.Models
             var rarity = _context.Rarities.Single(r => r.Id == card.Rarity);
 
             Card foundCard = new Card(card.Id, card.Cost, card.Attack, card.Defense, card.Name, color.Color1, rarity.Rarity1);
-
             return foundCard;
         }
 
@@ -89,9 +86,7 @@ namespace Project2_TCG.Models
         public User SearchUserById(int id)
         {
             var user = _context.Users.Single(u => u.Id == id);
-
             User foundUser = new User(user.Username, user.Password);
-
             return foundUser;
         }
     }
