@@ -18,7 +18,7 @@ namespace Project2_TCG.Models
         /// </summary>
         /// <param name="searchString"></param>
         /// <returns></returns>
-        public List<Card> SearchCardByName(string searchString);
+        public Card SearchCardByName(string searchString);
         /// <summary>
         /// get a 
         /// </summary>

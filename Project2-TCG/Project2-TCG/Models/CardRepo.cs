@@ -33,9 +33,17 @@ namespace Project2_TCG.Models
             throw new NotImplementedException();
         }
 
-        Card ICardRepo.GetRandomCard()
+        public Card GetRandomCard()
         {
-            throw new NotImplementedException();
+            var cardCount = _context.Cards.Count();
+            Random random = new Random();
+            int selection = random.Next(1, cardCount);
+
+            var card = _context.Cards.Single(c => c.Id == selection);
+            var color = _context.Colors.Single(c => c.Id == card.Color);
+            var rarity = _context.Rarities.Single(r => r.Id == card.Rarity);
+            Card foundCard = new Card(card.Id, card.Cost, card.Attack, card.Defense, card.Name, color.Color1, rarity.Rarity1);
+            return foundCard;
         }
 
         Rarity ICardRepo.GetRarity(int id)
@@ -62,9 +70,15 @@ namespace Project2_TCG.Models
             throw new NotImplementedException();
         }
 
-        List<Card> ICardRepo.SearchCardByName(string searchString)
+        public Card SearchCardByName(string searchString)
         {
-            throw new NotImplementedException();
+            var card = _context.Cards.Single(c => c.Name.Equals(searchString));
+            var color = _context.Colors.Single(c => c.Id == card.Color);
+            var rarity = _context.Rarities.Single(r => r.Id == card.Rarity);
+
+            Card foundCard = new Card(card.Id, card.Cost, card.Attack, card.Defense, card.Name, color.Color1, rarity.Rarity1);
+
+            return foundCard;
         }
 
         void ICardRepo.UpdateUserCurrency(User user)
