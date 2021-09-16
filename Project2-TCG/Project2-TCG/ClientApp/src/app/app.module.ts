@@ -31,14 +31,14 @@ import { CollectionComponent } from './collection/collection.component';
     HttpClientModule,
     FormsModule,
     RouterModule.forRoot([
-      { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'counter', component: CounterComponent },
-      { path: 'fetch-data', component: FetchDataComponent },
-      { path: 'login', component: LoginComponent },
-      { path: 'play', component: PlayComponent },
-      { path: 'open', component: OpenComponent },
-      { path: 'collection', component: CollectionComponent },
-    ])
+    { path: '', component: HomeComponent, pathMatch: 'full' },
+    { path: 'counter', component: CounterComponent },
+    { path: 'fetch-data', component: FetchDataComponent },
+    { path: 'login', component: LoginComponent },
+    { path: 'play', component: PlayComponent },
+    { path: 'open', component: OpenComponent },
+    { path: 'collection', component: CollectionComponent },
+], { relativeLinkResolution: 'legacy' })
   ],
   providers: [],
   bootstrap: [AppComponent]
