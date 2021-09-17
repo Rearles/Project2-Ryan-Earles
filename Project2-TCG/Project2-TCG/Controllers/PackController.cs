@@ -40,19 +40,19 @@ namespace Project2_TCG.Controllers
                 rarityselection = random.Next(1, 100);//makes a new random number from 1 to 100
                 if (rarityselection >= 1 || rarityselection <= 50)
                 {
-                    cardsOpened.Add(_cardRepo.GetRandomCardofRarity("Common"));
+                    cardsOpened.Add(_cardRepo.GetRandomCardofRarity(1));
                 }//checks if the number rarityselection falls into the percent chance of common cards and adds a random common card to pack
                 else if (rarityselection >= 51 || rarityselection <= 75)
                 {
-                    cardsOpened.Add(_cardRepo.GetRandomCardofRarity("Uncommon"));
+                    cardsOpened.Add(_cardRepo.GetRandomCardofRarity(2));
                 }//checks if the number rarityselection falls into the percent chance of uncommon cards and adds a random uncommon card to pack
                 else if (rarityselection >= 76 || rarityselection <= 93)
                 {
-                    cardsOpened.Add(_cardRepo.GetRandomCardofRarity("Rare"));
+                    cardsOpened.Add(_cardRepo.GetRandomCardofRarity(3));
                 }//checks if the number rarityselection falls into the percent chance of rare cards and adds a random rare card to pack
                 else if (rarityselection >= 94 || rarityselection <= 100)
                 {
-                    cardsOpened.Add(_cardRepo.GetRandomCardofRarity("Mega Rare"));
+                    cardsOpened.Add(_cardRepo.GetRandomCardofRarity(4));
                 }//checks if the number rarityselection falls into the percent chance of mega rare cards and adds a random mega rare card to pack
 
             }
