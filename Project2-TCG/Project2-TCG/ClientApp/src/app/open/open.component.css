@@ -1,0 +1,10 @@
+.page-landing {
+  background-image: url('../images/parchment_paper.jpg');
+  margin: 0px;
+  height: 100vh;
+}
+
+.info-section-one {
+    background-color: white;
+    display: inline-block;
+}
