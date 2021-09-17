@@ -53,7 +53,7 @@ namespace Project2_TCG.Models
         /// </summary>
         /// <param name="rarity"></param>
         /// <returns></returns>
-        public Card GetRandomCardofRarity(string rarity);
+        public Card GetRandomCardofRarity(int id);
         /// <summary>
         /// add a user to the database
         /// </summary>
@@ -74,6 +74,8 @@ namespace Project2_TCG.Models
         /// </summary>
         /// <param name="Id"></param>
         public User SearchUserById(int id);
+
+       
         
     }
 }

@@ -51,9 +51,9 @@ namespace Project2_TCG.Models
             Card foundCard = new Card(card.Id, card.Cost, card.Attack, card.Defense, card.Name, color.Color1, rarity.Rarity1);
             return foundCard;
         }
-        public Card GetRandomCardofRarity(string rarity)
+        public Card GetRandomCardofRarity(int id)
         {
-            List<Card> cards = (List<Card>)_context.Cards.Select(x => x.Rarity.ToString() == rarity); //grab all cards with the given rarity
+            List<Card> cards = (List<Card>)_context.Cards.Select(x => x.Rarity == id); //grab all cards with the given rarity
             var cardCount = cards.Count();//get the ids 
             Random random = new Random();
             int selection = random.Next(1, cardCount); //choose a random id from those cards selected
