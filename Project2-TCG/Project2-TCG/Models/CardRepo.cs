@@ -18,9 +18,15 @@ namespace Project2_TCG.Models
             _context = context;
         }
 
-        public User AddUser()
+        public void AddUser(string username, string password)
         {
-            throw new NotImplementedException();
+            _context.Users.Add(new Entities.User
+            {
+                Username = username,
+                Password = password
+            });
+
+            _context.SaveChanges();
         }
 
         List<Card> ICardRepo.FilterCardsByRarity(Rarity rarity)

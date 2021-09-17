@@ -13,6 +13,8 @@ import { LoginComponent } from './login/login.component';
 import { PlayComponent } from './play/play.component';
 import { OpenComponent } from './open/open.component';
 import { CollectionComponent } from './collection/collection.component';
+import { CardComponent } from './card/card.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,8 @@ import { CollectionComponent } from './collection/collection.component';
     PlayComponent,
     OpenComponent,
     CollectionComponent,
+    CardComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -37,7 +41,8 @@ import { CollectionComponent } from './collection/collection.component';
     { path: 'login', component: LoginComponent },
     { path: 'play', component: PlayComponent },
     { path: 'open', component: OpenComponent },
-    { path: 'collection', component: CollectionComponent },
+      { path: 'collection', component: CollectionComponent },
+      {path: 'register', component: RegisterComponent}
 ], { relativeLinkResolution: 'legacy' })
   ],
   providers: [],

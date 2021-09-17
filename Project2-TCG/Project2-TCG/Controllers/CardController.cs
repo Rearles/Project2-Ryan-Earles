@@ -32,15 +32,16 @@ namespace Project2_TCG.Controllers
 
         //Random Card Search
         [HttpGet]
-        public ActionResult<Models.Card> Get()
+        public Models.Card Get()
         {
             return _cardRepo.GetRandomCard();
         }
 
         // POST api/<CardController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post([FromBody] string username, string password)
         {
+         
         }
 
         // PUT api/<CardController>/5
