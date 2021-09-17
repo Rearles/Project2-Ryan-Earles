@@ -52,7 +52,7 @@ namespace Project2_TCG.Models
         /// add a user to the database
         /// </summary>
         /// <returns></returns>
-        public User AddUser();
+        public void AddUser(string username, string password);
         /// <summary>
         /// update the amount of currency a given user has
         /// </summary>

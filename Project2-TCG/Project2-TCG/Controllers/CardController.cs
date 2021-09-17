@@ -39,8 +39,9 @@ namespace Project2_TCG.Controllers
 
         // POST api/<CardController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post([FromBody] string username, string password)
         {
+         
         }
 
         // PUT api/<CardController>/5
