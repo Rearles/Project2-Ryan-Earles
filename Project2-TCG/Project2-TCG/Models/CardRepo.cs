@@ -51,7 +51,19 @@ namespace Project2_TCG.Models
             Card foundCard = new Card(card.Id, card.Cost, card.Attack, card.Defense, card.Name, color.Color1, rarity.Rarity1);
             return foundCard;
         }
-
+        public Card GetRandomCardofRarity(Rarity rarity)
+        {
+            
+            List<Card> cards = (List<Card>)_context.Cards.Select(x => x.Rarity.ToString() == rarity.ToString()); //grab all cards with the given rarity
+            var cardCount = cards.Count();
+            Random random = new Random();
+            int selection = random.Next(1, cardCount); //choose a random id from those cards selected
+            Card foundcard = cards.Find(x => x.Id == selection); //find the card at the selected id
+            return foundcard;//return that card
+            //find a random card with the rarity above
+            //find all cards with the given rarity and select a random one to return
+            
+        }
         Rarity ICardRepo.GetRarity(int id)
         {
             throw new NotImplementedException();
