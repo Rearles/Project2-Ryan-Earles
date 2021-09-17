@@ -32,7 +32,7 @@ namespace Project2_TCG.Controllers
 
         //Random Card Search
         [HttpGet]
-        public ActionResult<Models.Card> Get()
+        public Models.Card Get()
         {
             return _cardRepo.GetRandomCard();
         }
