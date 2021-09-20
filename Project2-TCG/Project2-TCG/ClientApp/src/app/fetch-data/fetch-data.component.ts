@@ -15,7 +15,7 @@ export class FetchDataComponent implements OnInit {
   //    this.forecasts = result;
   //  }, error => console.error(error));
 
-  Cards: CardComponent[];
+  Cards: Card[];
 
   constructor(private http: HttpClient) {
 
@@ -25,7 +25,7 @@ export class FetchDataComponent implements OnInit {
     let resp = this.http.get("https://localhost:44390/api/card");
     resp.subscribe((result: Card) => {
       console.log(result)
-      this.Cards = [new CardComponent(result)];
+      this.Cards = [result];
      
     }, error => console.error(error))
   }

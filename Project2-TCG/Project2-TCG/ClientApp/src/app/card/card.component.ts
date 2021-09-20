@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-card',
@@ -6,23 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./card.component.css']
 })
 export class CardComponent implements OnInit {
-  public color: string;
-  public imgurl: string;
-  public attack: number;
-  public defense: number;
-  public name: string;
-  public cost: number;
-  public rarity: string;
-  public id: number;
-  constructor(result:Card) {
-    this.id = result.id;
-    this.color = result.color;
-    this.imgurl = result.name;
-    this.attack = result.attack;
-    this.defense = result.cost;
-    this.cost = result.cost;
-    this.name = result.name;
-    this.rarity = result.rarity;
+  @Input() card?: Card;
+  constructor() {
   }
   /*constructor() {
     this.id = 1;
@@ -39,7 +24,7 @@ export class CardComponent implements OnInit {
   }
 
 }
-export class Card {
+export class Card implements OnInit {
   public id: number;
   public cost: number;
   public attack: number;
