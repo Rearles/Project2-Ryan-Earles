@@ -1,0 +1,62 @@
+.container {
+  position: relative;
+  text-align: left;
+  color: black;
+}
+.card-border{
+    position: relative;
+    top:0;
+    left:0;
+}
+.card-image{
+    position: absolute;
+    top: 15px;
+    left: 30px;
+}
+
+/* Bottom left text */
+.card-defense {
+  font-size: 12px;
+  position: absolute;
+  bottom: 25px;
+  left: 40px;
+}
+
+/* Top left text */
+.card-name{
+  font-size: 12px;
+  position: absolute;
+  top: 0px;
+  left: 25px;
+}
+
+/* Top right text */
+.card-cost {
+  font-size: 12px;
+  position: absolute;
+  top: 0px;
+  left: 260px;
+}
+
+/* Bottom right text */
+.card-attack {
+  font-size: 12px;
+  position: absolute;
+  bottom: 25px;
+  left: 245px;
+}
+
+/* Centered text */
+.card-flavor {
+  font-size: 12px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.rarity {
+    position: absolute;
+    bottom: 0px;
+    left: 15px;
+}

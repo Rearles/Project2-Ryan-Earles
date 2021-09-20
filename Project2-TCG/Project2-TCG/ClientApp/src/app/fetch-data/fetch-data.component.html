@@ -1,8 +1,1 @@
-<p>Cost: {{cards.cost}}</p>
-<p>Attack: {{cards.attack}}</p>
-<p>Defense: {{cards.defense}}</p>
-<p>Rarity: {{cards.rarity}}</p>
-<p>Color: {{cards.color}}</p>
-<p>Name: {{cards.name}}</p>
-
-<app-card></app-card>
+<app-card *ngFor="let c of Cards"></app-card>

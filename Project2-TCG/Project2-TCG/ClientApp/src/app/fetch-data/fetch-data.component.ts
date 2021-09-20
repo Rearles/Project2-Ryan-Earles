@@ -1,11 +1,13 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { CardComponent } from '../card/card.component';
+import { Card } from '../card/card.component';
 
 @Component({
   selector: 'app-fetch-data',
   templateUrl: './fetch-data.component.html'
 })
-export class FetchDataComponent implements OnInit{
+export class FetchDataComponent implements OnInit {
   //public forecasts: WeatherForecast[];
 
   //constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
@@ -13,16 +15,18 @@ export class FetchDataComponent implements OnInit{
   //    this.forecasts = result;
   //  }, error => console.error(error));
 
-  public cards: any;
-  
+  Cards: CardComponent[];
+
   constructor(private http: HttpClient) {
+
   }
 
   ngOnInit() {
     let resp = this.http.get("https://localhost:44390/api/card");
-    resp.subscribe(result => {
+    resp.subscribe((result: Card) => {
       console.log(result)
-      this.cards = result;
+      this.Cards = [new CardComponent(result)];
+     
     }, error => console.error(error))
   }
 }
@@ -34,7 +38,7 @@ interface WeatherForecast {
   summary: string;
 }
 
-interface Card {
+/*interface Card {
   id: number,
   cost: number,
   attack: number,
@@ -42,4 +46,4 @@ interface Card {
   name: string,
   color: string,
   rarity: string
-}
+}*/
