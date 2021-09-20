@@ -36,6 +36,12 @@ namespace Project2_TCG.Controllers
         {
             return new string[] { "value1", "value2" };
         }
+        //Get: api/<UserController>
+        [HttpGet("{collection}")]
+        public List<Models.Card> GetCollection(int userid)
+        {
+            return _cardRepo.GetUsersCards(userid);
+        }
 
         // GET api/<UserController>/5
         [HttpGet("{name}")]
