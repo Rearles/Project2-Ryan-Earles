@@ -115,5 +115,18 @@ namespace Project2_TCG.Models
             User foundUser = new User(user.Username, user.Password);
             return foundUser;
         }
+
+        public User LogIn(string username, string password)
+        {
+            try
+            {
+                var user = _context.Users.Single(u => u.Username == username && u.Password == password);
+                return new User(user.Username, user.Password);
+            }
+            catch (System.InvalidOperationException)
+            {
+                return new User("error", "error");
+            }
+        }
     }
 }

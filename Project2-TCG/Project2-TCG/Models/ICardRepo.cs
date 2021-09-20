@@ -74,8 +74,10 @@ namespace Project2_TCG.Models
         /// </summary>
         /// <param name="Id"></param>
         public User SearchUserById(int id);
-
-       
+        /// <summary>
+        /// Returns an object indicating if credentials were valid
+        /// </summary>
+        public User LogIn(string username, string password);
         
     }
 }
