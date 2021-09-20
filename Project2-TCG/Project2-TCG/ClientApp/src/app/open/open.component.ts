@@ -6,7 +6,7 @@ import { Card } from '../card/card.component';
   selector: 'app-open',
   templateUrl: './open.component.html',
 })
-export class OpenComponent {
+export class OpenComponent implements OnInit {
   Cards: Card[];
 
   constructor(private http: HttpClient) {
