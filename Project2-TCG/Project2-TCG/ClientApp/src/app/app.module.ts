@@ -15,6 +15,7 @@ import { OpenComponent } from './open/open.component';
 import { CollectionComponent } from './collection/collection.component';
 import { CardComponent } from './card/card.component';
 import { RegisterComponent } from './register/register.component';
+import { Card } from './card/card.component';
 
 @NgModule({
   declarations: [
@@ -42,10 +43,10 @@ import { RegisterComponent } from './register/register.component';
     { path: 'play', component: PlayComponent },
     { path: 'open', component: OpenComponent },
       { path: 'collection', component: CollectionComponent },
-      {path: 'register', component: RegisterComponent}
+      { path: 'register', component: RegisterComponent },
 ], { relativeLinkResolution: 'legacy' })
   ],
-  providers: [],
+  providers: [Card],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
