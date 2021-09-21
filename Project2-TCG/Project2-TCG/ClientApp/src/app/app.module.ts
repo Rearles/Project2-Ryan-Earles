@@ -16,6 +16,7 @@ import { CollectionComponent } from './collection/collection.component';
 import { CardComponent } from './card/card.component';
 import { RegisterComponent } from './register/register.component';
 import { Card } from './card/card.component';
+import { LoginHeaderComponent } from './login-header/login-header.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { Card } from './card/card.component';
     CollectionComponent,
     CardComponent,
     RegisterComponent,
+    LoginHeaderComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -46,7 +48,7 @@ import { Card } from './card/card.component';
       { path: 'register', component: RegisterComponent },
 ], { relativeLinkResolution: 'legacy' })
   ],
-  providers: [Card],
+  providers: [Card, LoginComponent, LoginHeaderComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

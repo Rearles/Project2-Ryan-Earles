@@ -1,4 +1,4 @@
-
+<h2>You are logged in as {{user.username}}</h2>
 <h1>Login</h1>
 <form>
   <div>
@@ -9,5 +9,6 @@
   </div>
   <div>
     <button (click)="onClick(username.value, password.value)">Login</button>
+    <button (click)="logout()">Logout</button>
   </div>
 </form>
