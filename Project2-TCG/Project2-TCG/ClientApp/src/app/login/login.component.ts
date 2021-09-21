@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { User } from './user';
+import { LoginHeaderComponent } from '../login-header/login-header.component';
 
 
 @Component({
@@ -9,11 +10,11 @@ import { User } from './user';
 })
 export class LoginComponent {
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private loginHeaderComponent: LoginHeaderComponent) {
 
   }
 
-  user: User;
+  user?: User;
 
   onClick(username: string, password: string) {
     this.http.post<any>('https://localhost:44390/api/login/', { username, password }, {
@@ -24,6 +25,7 @@ export class LoginComponent {
       this.user = {username: data.username, password: data.password, currency: data.currency}
       console.log(this.user.username)
     })
+    this.loginHeaderComponent.userInfo = this.user;
   }
 }
 
