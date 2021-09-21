@@ -21,7 +21,8 @@ export class LoginComponent {
         'Content-Type': 'application/json'
       })
     }).subscribe(data => {
-      console.log(data)
+      this.user = {username: data.username, password: data.password, currency: data.currency}
+      console.log(this.user.username)
     })
   }
 }
