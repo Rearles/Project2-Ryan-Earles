@@ -13,6 +13,7 @@ export class LoginHeaderComponent implements OnInit {
 
   userInfo?: User;
   username: string = localStorage.getItem("user")
+  currency: string = localStorage.getItem("currency")
 
   ngOnInit(): void {
   }
