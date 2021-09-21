@@ -16,6 +16,11 @@ export class LoginComponent {
 
   user?: User;
 
+  logout() {
+    localStorage.removeItem("user");
+    window.location.reload();
+  }
+
   onClick(username: string, password: string) {
     this.http.post<any>('https://localhost:44390/api/login/', { username, password }, {
       headers: new HttpHeaders({
@@ -24,8 +29,9 @@ export class LoginComponent {
     }).subscribe(data => {
       this.user = {username: data.username, password: data.password, currency: data.currency}
       console.log(this.user.username)
-    })
-    this.loginHeaderComponent.userInfo = this.user;
+      localStorage.setItem("user", data.username)
+      window.location.reload();
+    }) 
   }
 }
 

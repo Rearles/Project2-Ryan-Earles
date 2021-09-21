@@ -12,6 +12,7 @@ export class LoginHeaderComponent implements OnInit {
   constructor() { }
 
   userInfo?: User;
+  username: string = localStorage.getItem("user")
 
   ngOnInit(): void {
   }
