@@ -38,7 +38,7 @@ namespace Project2_TCG.Controllers
             int rarityselection;
             for (int i = 0; i < 5; i++)
             {
-                rarityselection = random.Next(1, 75);//makes a new random number from 1 to 100
+                rarityselection = random.Next(1, 100);//makes a new random number from 1 to 100
                 if (rarityselection >= 1 && rarityselection <= 50)
                 {
                     cardsOpened.Add(_cardRepo.GetRandomCardofRarity(1));
