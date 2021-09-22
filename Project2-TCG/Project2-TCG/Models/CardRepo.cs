@@ -54,7 +54,7 @@ namespace Project2_TCG.Models
         public Card GetRandomCardofRarity(int id)
         {
             List<Entities.Card> query = _context.Cards.Where(x => x.Rarity == id).ToList();//grab all cards with the given rarity
-            var cardCount = query.Count();//get the ids 
+            var cardCount = query.Count();
             Random random = new Random();
             int selection = random.Next(0, cardCount-1); //choose a random id from those cards selected
             Entities.Card card = query[selection]; //find the card at the selected id
@@ -76,14 +76,24 @@ namespace Project2_TCG.Models
             return foundUser;
         }
 
+        Card GetCardById(int cardId)
+        {
+            Entities.Card card = _context.Cards.FirstOrDefault(x => x.Id == cardId);
+            var color = _context.Colors.Single(c => c.Id == card.Color);
+            var rarity = _context.Rarities.Single(r => r.Id == card.Rarity);
+            Card foundCard = new Card(card.Id, card.Cost, card.Attack, card.Defense, card.Name, color.Color1, rarity.Rarity1);
+            return foundCard;
+        }
         List<Card> ICardRepo.GetUsersCards(int userId)//grab all cards from Card/User join at the userid
         {
-            List<Card> cards = new List<Card>();//models
-            List<UsersCard> userscards = (List<UsersCard>)_context.UsersCards.Select(x => x.UserId == userId);//models.entity
+
+            List<Card> cards = new List<Card>();
+            List<UsersCard> userscards = _context.UsersCards.Where(x => x.UserId == userId).ToList();//models.entity
             foreach (UsersCard u in userscards)
             {
-                    //u.card is models.entities.card and cards is models.card so take every aspect of a UsersCard.Card and put it into a Models.Card
-                    Card card = new Card(u.Card.Id, u.Card.Cost, u.Card.Attack, u.Card.Defense, u.Card.Name, u.Card.Rarity.ToString(), u.Card.Color.ToString());
+
+                //u.card is models.entities.card and cards is models.card so take every aspect of a UsersCard.Card and put it into a Models.Card
+                Card card = GetCardById(u.CardId);
                     for (int i = 1; i <= u.Quantity; i++)//this adds quantity of cards to the user.
                     {
                         cards.Add(card);

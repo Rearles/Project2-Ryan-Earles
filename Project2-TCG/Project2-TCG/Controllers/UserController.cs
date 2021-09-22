@@ -37,7 +37,7 @@ namespace Project2_TCG.Controllers
             return new string[] { "value1", "value2" };
         }
         //Get: api/<UserController>
-        [HttpGet("{collection}")]
+        [HttpGet("collection/{username}")]
         public List<Models.Card> GetCollection(string username)
         {
             int userId = _cardRepo.GetUserByName(username).Id;
