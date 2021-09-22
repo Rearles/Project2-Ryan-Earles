@@ -4,15 +4,17 @@
 <div class="register-page">
   <div class="register-form">
     <h1>Register</h1>
-    <form>
+    <form #registerForm="ngForm">
       <div class="form-element">
-        <input type="text" #username id="login" name="username" placeholder="username">
+        <input type="text" ngModel #username="ngModel" id="login" required name="username" placeholder="username">
+        <div class="alert alert-danger" *ngIf="!username.valid && username.touched">Username is required</div>
       </div>
       <div>
-        <input type="text" #password id="password" name="password" placeholder="password">
+        <input type="text" ngModel #password="ngModel" id="password" required name="password" placeholder="password">
+        <div class="alert alert-danger" *ngIf="!username.valid && username.touched">Password is required</div>
       </div>
       <div>
-        <button class="btn btn-dark" (click)="onClick(username.value, password.value)">Create Account</button>
+        <button [disabled]="!registerForm.form.valid" class="btn btn-dark" (click)="onClick(username.value, password.value)">Create Account</button>
       </div>
     </form>
   </div>
