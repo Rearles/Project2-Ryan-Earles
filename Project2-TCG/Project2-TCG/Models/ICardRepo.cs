@@ -78,6 +78,11 @@ namespace Project2_TCG.Models
         /// Returns an object indicating if credentials were valid
         /// </summary>
         public User LogIn(string username, string password);
-        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="userid"></param>
+        /// <param name="card"></param>
+        public Entities.UsersCard AddCardToUsersCollection(int userId, int cardId);
     }
 }

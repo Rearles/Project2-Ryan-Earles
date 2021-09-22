@@ -2,6 +2,8 @@
   position: relative;
   text-align: left;
   color: black;
+  overflow: hidden;
+  float: left;
 }
 .card-border{
     position: relative;
