@@ -1,0 +1,12 @@
+.user-info { 
+    width: 200px;
+    margin: auto;
+    background-color: white;
+}
+
+.user-info-container {
+  width: 250px;
+  height: 200px;
+  float: right;
+  margin-right: 50px;
+}

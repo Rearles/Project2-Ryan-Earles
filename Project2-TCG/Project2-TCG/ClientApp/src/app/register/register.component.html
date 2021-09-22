@@ -1,13 +1,20 @@
-<h1>Register</h1>
-<form>
-  <div>
-    <input type="text" #username id="login" name="username">
+<div class="bg-image">
+</div>
+
+<div class="register-page">
+  <div class="register-form">
+    <h1>Register</h1>
+    <form>
+      <div class="form-element">
+        <input type="text" #username id="login" name="username" placeholder="username">
+      </div>
+      <div>
+        <input type="text" #password id="password" name="password" placeholder="password">
+      </div>
+      <div>
+        <button class="btn btn-dark" (click)="onClick(username.value, password.value)">Create Account</button>
+      </div>
+    </form>
   </div>
-  <div>
-    <input type="text" #password id="password" name="password">
-  </div>
-  <div>
-    <button (click)="onClick(username.value, password.value)">Login</button>
-  </div>
-</form>
+</div>
 

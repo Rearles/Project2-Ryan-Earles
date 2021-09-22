@@ -7,6 +7,7 @@ import { LoginHeaderComponent } from '../login-header/login-header.component';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
 
@@ -18,6 +19,7 @@ export class LoginComponent {
 
   logout() {
     localStorage.removeItem("user");
+    localStorage.removeItem("currency")
     window.location.reload();
   }
 
@@ -29,7 +31,11 @@ export class LoginComponent {
     }).subscribe(data => {
       this.user = {username: data.username, password: data.password, currency: data.currency}
       console.log(this.user.username)
-      localStorage.setItem("user", data.username)
+      this.logout();
+      if (data.username != "error") {
+        localStorage.setItem("user", data.username)
+        localStorage.setItem("currency", data.currency)
+      }
       window.location.reload();
     }) 
   }
