@@ -28,13 +28,12 @@ namespace Project2_TCG.Models
         /// <param name="name"></param>
         /// <param name="pass"></param>
         /// <param name="currency"></param>
-        public User(int id, string name, string pass, int currency, List<Card> collection)
+        public User(int id, string name, string pass, int? currency)
         {
             this.Id = id;
             this.Username = name;
             this.Password = pass;
             this.Currency = currency;
-            this.Collection = collection;
         }
         public int Id { get; set; }
         public string Username { get; set; }

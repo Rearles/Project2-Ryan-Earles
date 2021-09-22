@@ -72,7 +72,7 @@ namespace Project2_TCG.Models
         User ICardRepo.GetUserByName(string name)
         {
             var user = _context.Users.Single(u => u.Username.Equals(name));
-            User foundUser = new User(user.Username, user.Password);
+            User foundUser = new User(user.Id, user.Username, user.Password, user.Currency);
             return foundUser;
         }
 
@@ -130,6 +130,23 @@ namespace Project2_TCG.Models
             {
                 return new User("error", "error");
             }
+        }
+
+        public Entities.UsersCard AddCardToUsersCollection(int userId, int cardId)
+        {
+            Entities.UsersCard inst = _context.UsersCards.FirstOrDefault(x => x.CardId == cardId && x.UserId == userId);
+            if (inst == null) {
+                _context.UsersCards.Add(new Entities.UsersCard{
+                                    UserId = userId,
+                                    CardId = cardId,
+                                    Quantity = 1}
+                );
+            }else{
+                inst.Quantity++;
+                _context.Update(inst);
+            }
+            _context.SaveChanges();
+            return inst;
         }
     }
 }

@@ -2,24 +2,36 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Card } from '../card/card.component';
 
+
 @Component({
   selector: 'app-open',
   templateUrl: './open.component.html',
 })
 export class OpenComponent implements OnInit {
   Cards: Card[];
-
+  username: string;
+  message: string;
   constructor(private http: HttpClient) {
 
   }
+  //userInfo?: User;
+  
+  onClick() {
+    this.username = localStorage.getItem("user");
+    if (this.username == null || this.username == "error") {
+      this.message = "Not logged in!";
+    } else {
 
+      let resp = this.http.get("https://localhost:44390/api/pack/"+this.username);
+      resp.subscribe((result: Card[]) => {
+        console.log(result)
+
+        this.Cards = result;
+
+      }, error => console.error(error))
+    }
+  }
   ngOnInit() {
-    let resp = this.http.get("https://localhost:44390/api/pack/1");
-    resp.subscribe((result: Card[]) => {
-      console.log(result)
 
-      this.Cards = result;
-
-    }, error => console.error(error))
   }
 }
