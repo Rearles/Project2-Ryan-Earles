@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
@@ -48,7 +48,7 @@ import { LoginHeaderComponent } from './login-header/login-header.component';
       { path: 'register', component: RegisterComponent },
 ], { relativeLinkResolution: 'legacy' })
   ],
-  providers: [Card, LoginComponent, LoginHeaderComponent],
+  providers: [Card, LoginComponent, LoginHeaderComponent, RegisterComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
