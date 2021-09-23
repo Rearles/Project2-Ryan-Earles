@@ -35,12 +35,16 @@
 
   <ItemGroup>
     <None Remove="ClientApp\src\app\collection\collection.component.ts" />
+    <None Remove="ClientApp\src\app\login-header\login-header.component.spec.ts" />
+    <None Remove="ClientApp\src\app\login-header\login-header.component.ts" />
     <None Remove="ClientApp\src\app\open\open.component.ts" />
     <None Remove="ClientApp\src\app\play\play.component.ts" />
   </ItemGroup>
 
   <ItemGroup>
     <TypeScriptCompile Include="ClientApp\src\app\collection\collection.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\login-header\login-header.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\login-header\login-header.component.spec.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\open\open.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\play\play.component.ts" />
   </ItemGroup>
