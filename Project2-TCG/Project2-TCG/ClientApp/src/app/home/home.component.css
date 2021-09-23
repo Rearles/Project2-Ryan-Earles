@@ -5,7 +5,7 @@
   height: 100vh;
   animation-duration: 5s;
   animation-name: fade-in;
-  box-shadow: 0 0 8px 8px white inset;
+  box-shadow: 0 0 8px 8px black inset;
 }
 
 @keyframes fade-in {

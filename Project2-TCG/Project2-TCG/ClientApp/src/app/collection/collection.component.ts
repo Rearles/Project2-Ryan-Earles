@@ -7,6 +7,7 @@ import { Card } from '../card/card.component';
 @Component({
   selector: 'app-collection',
   templateUrl: './collection.component.html',
+  styleUrls: ['./collection.component.css'],
 })
 export class CollectionComponent {
   Cards: Card[];

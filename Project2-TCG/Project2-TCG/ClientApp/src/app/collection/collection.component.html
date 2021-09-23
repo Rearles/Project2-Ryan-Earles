@@ -1,4 +1,6 @@
-
-<p>{{message}}</p>
-<app-card *ngFor="let card of Cards" [card]="card"></app-card>
-
+<div class="collection">
+  <p>{{message}}</p>
+  <div class=".cardrows">
+    <app-card *ngFor="let card of Cards" [card]="card"></app-card>
+  </div>
+</div>

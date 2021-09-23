@@ -2,8 +2,17 @@ a.navbar-brand {
   white-space: normal;
   text-align: center;
   word-break: break-all;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 32px;
+  color: lightblue;
+
 }
 
+.bg-pink {
+  background-image: url('../../assets/images/nav.jpg');
+  background-repeat: repeat-x;
+
+}
 html {
   font-size: 14px;
 }
@@ -16,3 +25,10 @@ html {
 .box-shadow {
   box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
 }
+.nav-text {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+}
+
