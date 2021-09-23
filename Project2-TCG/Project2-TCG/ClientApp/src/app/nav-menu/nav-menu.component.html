@@ -19,36 +19,36 @@
           <li class="nav-item"
               [routerLinkActive]="['link-active']"
               [routerLinkActiveOptions]="{ exact: true }">
-            <a class="nav-link nav-text" [routerLink]="['/']" style="color:white;">Home</a>
+            <a class="nav-link nav-text" [routerLink]="['/']" style="color: lightgray;">Home</a>
           </li>
           <li class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link nav-text" [routerLink]="['/counter']" style="color:white;">Counter</a>
+            <a class="nav-link nav-text" [routerLink]="['/counter']" style="color: lightgray;">Counter</a>
           </li>
           <li class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link nav-text" [routerLink]="['/fetch-data']" style="color:white;">Fetch data</a>
+            <a class="nav-link nav-text" [routerLink]="['/fetch-data']" style="color: lightgray;">Fetch data</a>
           <li class="nav-item" [routerLinkActive]="['link-active']" >
-            <a class="nav-link nav-text" [routerLink]="['/play']" style="color:white;">Play</a>
+            <a class="nav-link nav-text" [routerLink]="['/play']" style="color: lightgray;">Play</a>
           </li>
           <li class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link nav-text" [routerLink]="['/collection']" style="color:white;">View Collection</a>
+            <a class="nav-link nav-text" [routerLink]="['/collection']" style="color: lightgray;">View Collection</a>
           </li>
           <li class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link nav-text" [routerLink]="['/open']" style="color:white;">Open Packs</a>
+            <a class="nav-link nav-text" [routerLink]="['/open']" style="color: lightgray;">Open Packs</a>
           </li>
        <div *ngIf="!loggedIn">
           <li class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link nav-text" [routerLink]="['/login']" style="color:white;">Login</a>
+            <a class="nav-link nav-text" [routerLink]="['/login']" style="color: lightgray;">Login</a>
           </li>
           <li class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link nav-text" [routerLink]="['/register']" style="color:white;">Register</a>
+            <a class="nav-link nav-text" [routerLink]="['/register']" style="color: lightgray;">Register</a>
           </li>
       </div>
       <div *ngIf="loggedIn">
         <li class="nav-item">
-          <a class="nav-link nav-text" [routerLink]="['/login']" style="color:white;">You are logged in as {{username}}</a>
+          <a class="nav-link nav-text" [routerLink]="['/login']" style="color: lightgray;">You are logged in as {{username}}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link nav-text" style="color:white;">Currency: {{currency}}</a>
+          <a class="nav-link nav-text" style="color: lightgray;">Currency: {{currency}}</a>
         </li>
       </div>
 

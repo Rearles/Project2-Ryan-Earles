@@ -18,3 +18,28 @@
     opacity: 100%;
   }
 }
+.open {
+  background-image: url('../../assets/images/button.jpg');
+  position: absolute;
+  top: 45%;
+  left: 20%;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: bold;
+  color:lightgray;
+  height: 400px;
+  width:300px;
+}
+
+.opened-card {
+  animation-duration: 3s;
+  animation: fade-in;
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0%;
+  }
+
+  100% {
+    opacity: 100%;
+  }
+}

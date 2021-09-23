@@ -1,6 +1,5 @@
-import { Component,OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { CardComponent } from '../card/card.component';
 import { Card } from '../card/card.component';
 
 
@@ -9,15 +8,12 @@ import { Card } from '../card/card.component';
   templateUrl: './collection.component.html',
   styleUrls: ['./collection.component.css'],
 })
-export class CollectionComponent {
+export class CollectionComponent implements OnInit {
   Cards: Card[];
   username: string;
   message: string;
   constructor(private http: HttpClient) {
-    this.Cards = [
-      //new CardComponent(),
-      //new CardComponent()
-    ];
+
   }
   ngOnInit() {
     this.username = localStorage.getItem("user");

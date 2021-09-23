@@ -44,8 +44,8 @@ import { LoginHeaderComponent } from './login-header/login-header.component';
     { path: 'login', component: LoginComponent },
     { path: 'play', component: PlayComponent },
     { path: 'open', component: OpenComponent },
-      { path: 'collection', component: CollectionComponent },
-      { path: 'register', component: RegisterComponent },
+    { path: 'collection', component: CollectionComponent },
+    { path: 'register', component: RegisterComponent },
 ], { relativeLinkResolution: 'legacy' })
   ],
   providers: [Card, LoginComponent, LoginHeaderComponent],
