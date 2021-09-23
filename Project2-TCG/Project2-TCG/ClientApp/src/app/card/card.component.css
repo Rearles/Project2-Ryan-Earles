@@ -1,9 +1,12 @@
+
 .container {
+  display: table-cell;
   position: relative;
   text-align: left;
   color: black;
-  overflow: hidden;
-  float: left;
+  padding: 10px;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: bold;
 }
 .card-border{
     position: relative;
@@ -12,8 +15,8 @@
 }
 .card-image{
     position: absolute;
-    top: 15px;
-    left: 30px;
+    top: 25px;
+    left: 25px;
 }
 
 /* Bottom left text */
@@ -21,23 +24,23 @@
   font-size: 12px;
   position: absolute;
   bottom: 25px;
-  left: 40px;
+  left: 35px;
 }
 
 /* Top left text */
 .card-name{
   font-size: 12px;
   position: absolute;
-  top: 0px;
-  left: 25px;
+  top: 9px;
+  left: 22px;
 }
 
 /* Top right text */
 .card-cost {
   font-size: 12px;
   position: absolute;
-  top: 0px;
-  left: 260px;
+  top: 9px;
+  left: 262px;
 }
 
 /* Bottom right text */
@@ -45,7 +48,7 @@
   font-size: 12px;
   position: absolute;
   bottom: 25px;
-  left: 245px;
+  left: 240px;
 }
 
 /* Centered text */
@@ -59,6 +62,6 @@
 
 .rarity {
     position: absolute;
-    bottom: 0px;
-    left: 15px;
+    bottom: 10px;
+    left: 10px;
 }

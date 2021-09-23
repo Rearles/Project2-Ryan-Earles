@@ -1,0 +1,14 @@
+.cardrows {
+  display: table;
+  table-layout: fixed;
+  border-spacing: 10px;
+  align-content: center;
+}
+.collection {
+  background-image: url('../../assets/images/vwb5.jpg');
+  background-repeat: repeat;
+  font-family: 'Josefin Sans', sans-serif;
+  box-shadow: 0 0 8px 4px white inset;
+  align-content: center;
+}
+

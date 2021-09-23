@@ -1,0 +1,22 @@
+.cardrows {
+  display: table;
+  width: 40%;
+  table-layout: fixed;
+  border-spacing: 10px;
+}
+.openpage {
+  background-image: url('../../assets/images/vwb4.jpg');
+  height: 100vh;
+  font-family: 'Josefin Sans', sans-serif;
+  box-shadow: 0 0 8px 8px white inset;
+  
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0%;
+  }
+
+  100% {
+    opacity: 100%;
+  }
+}
