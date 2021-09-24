@@ -7,8 +7,8 @@ import { Card } from '../card/card.component';
   selector: 'app-game',
   templateUrl: './game.component.html',
   styleUrls: ['./game.component.css'],
-  providers: [DeckService]
 })
+
 export class GameComponent implements OnInit{
   Deck: Card[] = this._dataService.getDeck();
   difficulty: string = localStorage.getItem("difficulty");

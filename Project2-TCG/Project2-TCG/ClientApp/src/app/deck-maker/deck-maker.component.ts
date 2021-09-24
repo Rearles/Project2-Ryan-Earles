@@ -8,15 +8,15 @@ import { Router } from '@angular/router';
   selector: 'app-collection',
   templateUrl: './deck-maker.component.html',
   styleUrls: ['./deck-maker.component.css'],
-  providers: [DeckService],
 })
+
 export class DeckComponent implements OnInit {
   Cards: Card[];
   username: string;
   message: string;
   numCards: number = 10;
   cardName: string;
-  Deck = new Array<Card>(10);
+  Deck = new Array<Card>(0);
   constructor(private http: HttpClient, private router: Router, private _dataService: DeckService) {
   }
   ngOnInit() {
