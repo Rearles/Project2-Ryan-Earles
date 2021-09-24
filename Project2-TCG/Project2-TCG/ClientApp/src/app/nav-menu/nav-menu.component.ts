@@ -22,7 +22,6 @@ export class NavMenuComponent {
   username: string = localStorage.getItem("user");
   currency: string = localStorage.getItem("currency");
 
-
   collapse() {
     this.isExpanded = false;
   }

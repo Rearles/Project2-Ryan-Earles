@@ -17,6 +17,9 @@ import { CardComponent } from './card/card.component';
 import { RegisterComponent } from './register/register.component';
 import { Card } from './card/card.component';
 import { LoginHeaderComponent } from './login-header/login-header.component';
+import { GameComponent } from './game/game.component';
+import { DeckComponent } from './deck-maker/deck-maker.component';
+import { DeckService } from './deck-maker/deck-service';
 
 @NgModule({
   declarations: [
@@ -32,23 +35,27 @@ import { LoginHeaderComponent } from './login-header/login-header.component';
     CardComponent,
     RegisterComponent,
     LoginHeaderComponent,
+    GameComponent,
+    DeckComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     FormsModule,
     RouterModule.forRoot([
-    { path: '', component: HomeComponent, pathMatch: 'full' },
-    { path: 'counter', component: CounterComponent },
-    { path: 'fetch-data', component: FetchDataComponent },
-    { path: 'login', component: LoginComponent },
-    { path: 'play', component: PlayComponent },
-    { path: 'open', component: OpenComponent },
-    { path: 'collection', component: CollectionComponent },
-    { path: 'register', component: RegisterComponent },
+      { path: '', component: HomeComponent, pathMatch: 'full' },
+      { path: 'counter', component: CounterComponent },
+      { path: 'fetch-data', component: FetchDataComponent },
+      { path: 'login', component: LoginComponent },
+      { path: 'play', component: PlayComponent },
+      { path: 'open', component: OpenComponent },
+      { path: 'collection', component: CollectionComponent },
+      { path: 'register', component: RegisterComponent },
+      { path: 'game', component: GameComponent },
+      { path: 'deck', component: DeckComponent },
 ], { relativeLinkResolution: 'legacy' })
   ],
-  providers: [Card, LoginComponent, LoginHeaderComponent],
+  providers: [Card, LoginComponent, LoginHeaderComponent, DeckService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
