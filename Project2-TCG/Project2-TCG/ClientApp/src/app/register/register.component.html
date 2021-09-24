@@ -5,6 +5,12 @@
   <div class="register-form">
     <h1>Register</h1>
     <form #registerForm="ngForm">
+      <div *ngIf="errorMessage">
+        <div class="alert alert-danger">That username is taken.</div>
+      </div>
+      <div *ngIf="successMessage">
+        <div class="alert alert-success">Account created!</div>
+      </div>
       <div class="form-element">
         <input type="text" ngModel #username="ngModel" id="login" required name="username" placeholder="username">
         <div class="alert alert-danger" *ngIf="!username.valid && username.touched">Username is required</div>

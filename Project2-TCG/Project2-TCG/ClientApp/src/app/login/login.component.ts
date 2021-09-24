@@ -15,6 +15,7 @@ export class LoginComponent {
 
   }
 
+  errorMessage?: string;
   user?: User;
 
   logout() {
@@ -31,12 +32,14 @@ export class LoginComponent {
     }).subscribe(data => {
       this.user = {username: data.username, password: data.password, currency: data.currency}
       console.log(this.user.username)
-      this.logout();
       if (data.username != "error") {
+        this.logout()
         localStorage.setItem("user", data.username)
         localStorage.setItem("currency", data.currency)
-      }
-      window.location.reload();
+        window.location.reload();
+      } else {
+        this.errorMessage = "That user does not exist."
+      }    
     }) 
   }
 }
