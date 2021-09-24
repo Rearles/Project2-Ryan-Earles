@@ -18,27 +18,27 @@ stages:
 - stage: Install
   jobs:
     
-    -job: NugetInstall
-    steps:
-    - task: NuGetToolInstaller@1
-      inputs:
-        versionSpec: 
-    - task: NuGetCommand@2
-      inputs:
-        command: 'restore'
-        restoreSolution: 'Project2-TCG/Project2-TCG.sln'
-        feedsToUse: 'select'
+    - job: NugetInstall
+      steps:
+      - task: NuGetToolInstaller@1
+        inputs:
+          versionSpec: 
+      - task: NuGetCommand@2
+        inputs:
+          command: 'restore'
+          restoreSolution: 'Project2-TCG/Project2-TCG.sln'
+          feedsToUse: 'select'
 
 - stage: Sonar_API
   jobs:
     
-    -job: Scan
-    steps:
+    - job: Scan
+      steps:
       - task: SonarCloudPrepare@1
         inputs:
-          organization: '210726-wvu-net-ext 210726-wvu-net-ext'
+          organization: '210726-wvu-net-ext'
           scannerMode: 'MSBuild'
-          projectKey: 'n-Ea210726-wvu-net-ext_P2-Group-1--Ryarles--Liam-Sloan--Sean-Fitzmaurice'
+          projectKey: '210726-wvu-net-ext_P2-Group-1--Ryan-Earles--Liam-Sloan--Sean-Fitzmaurice'
           projectName: 'P2-Group-1--Ryan-Earles--Liam-Sloan--Sean-Fitzmaurice'
       - task: DotNetCoreCLI@2
         inputs:
