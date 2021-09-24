@@ -19,7 +19,7 @@ export class RegisterComponent implements OnInit {
   errorMessage?: string;
 
   onClick(username: string, password: string) {
-    this.http.post<any>('https://www.tcggame.azurewebsites.net/api/user/', {  username, password }, {
+    this.http.post<any>('/api/user/', {  username, password }, {
       headers: new HttpHeaders({
         'Content-Type': 'application/json'
       })
