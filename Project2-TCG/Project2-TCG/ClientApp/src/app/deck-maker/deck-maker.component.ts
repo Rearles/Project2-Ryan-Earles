@@ -24,7 +24,7 @@ export class DeckComponent implements OnInit {
     if (this.username == null || this.username == "error") {
       this.message = "Not logged in!";
     } else {
-      let resp = this.http.get<any>("https://localhost:44390/api/user/collection/" + this.username);
+      let resp = this.http.get<any>("https://www.tcggame.azurewebsites.net/api/user/collection/" + this.username);
       resp.subscribe((result: Card[]) => {
         console.log(result)
 

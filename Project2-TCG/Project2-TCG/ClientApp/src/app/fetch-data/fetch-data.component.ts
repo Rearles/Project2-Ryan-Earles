@@ -16,7 +16,7 @@ export class FetchDataComponent implements OnInit {
   }
 
   ngOnInit() {
-    let resp = this.http.get("https://localhost:44390/api/card");
+    let resp = this.http.get("https://www.tcggame.azurewebsites.net/api/card");
     resp.subscribe((result: Card) => {
       console.log(result)
 
