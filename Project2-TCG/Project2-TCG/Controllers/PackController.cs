@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Project2_TCG.Models;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Linq;

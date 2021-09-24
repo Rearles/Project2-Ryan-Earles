@@ -9,5 +9,11 @@ namespace Project2_TCG.Models
     {
         public string username { get; set; }
         public string password { get; set; }
+
+        public CreatedUser(string username, string password)
+        {
+            this.username = username;
+            this.password = password;
+        }
     }
 }

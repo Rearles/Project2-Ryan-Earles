@@ -1,4 +1,5 @@
 ﻿using Project2_TCG.Models.Entities;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,15 +19,24 @@ namespace Project2_TCG.Models
             _context = context;
         }
 
-        public void AddUser(string username, string password)
+        public CreatedUser AddUser(string username, string password)
         {
-            _context.Users.Add(new Entities.User
+            try
             {
-                Username = username,
-                Password = password
-            });
-
-            _context.SaveChanges();
+                var user = _context.Users.Single(u => u.Username == username);
+                return new CreatedUser("error", "error");
+            }
+            catch (System.InvalidOperationException)
+            {
+                _context.Users.Add(new Entities.User
+                {
+                    Username = username,
+                    Password = password
+                    
+                });
+                _context.SaveChanges();
+                return new CreatedUser(username, password);
+            }
         }
 
         List<Card> ICardRepo.FilterCardsByRarity(Rarity rarity)
@@ -61,6 +71,7 @@ namespace Project2_TCG.Models
             var color = _context.Colors.Single(c => c.Id == card.Color);
             var rarity = _context.Rarities.Single(r => r.Id == card.Rarity);
             Card foundCard = new Card(card.Id, card.Cost, card.Attack, card.Defense, card.Name, color.Color1, rarity.Rarity1);
+            Log.Debug("We found the card at the rarity of " + foundCard.Rarity + ". At Id of " + foundCard.Id);
             return foundCard;//return that card
             
         }
