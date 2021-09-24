@@ -1,7 +1,9 @@
-<h1>Add {{numCards}} more cards to your deck</h1>
-<a>{{cardName}} Added</a>
+<div class="deckMessages">
+  <h1>Add {{numCards}} more cards to your deck</h1>
+  <a >{{cardName}} Added</a>
+</div>
 <div class="collection" style="background-color:black;">
   <div class=".cardrows"> 
-      <app-card *ngFor="let card of Cards" [card]="card" (click)="addToDeck(card)"></app-card>
+      <app-card *ngFor="let card of Cards; let indexOfelement=index" [card]="card" (click)="addToDeck(card, indexOfelement)"></app-card>
   </div>
 </div>
