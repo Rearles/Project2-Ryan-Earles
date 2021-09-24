@@ -23,7 +23,7 @@ export class OpenComponent implements OnInit {
       this.message = "Not logged in!";
     } else {
 
-      let resp = this.http.get("https://localhost:44390/api/pack/"+this.username);
+      let resp = this.http.get("/api/pack/"+this.username);
       resp.subscribe((result: Card[]) => {
         console.log(result)
 

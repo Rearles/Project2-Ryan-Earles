@@ -14,6 +14,8 @@ namespace Project2_TCG
 {
     public class Startup
     {
+        readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -24,6 +26,17 @@ namespace Project2_TCG
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(options =>
+            {
+                options.AddPolicy(name: MyAllowSpecificOrigins,
+                                  builder =>
+                                  {
+                                      builder.WithOrigins("http://www.tcggame.azurewebsites.net",
+                                                          "http://www.tcggame.azurewebsites.net");
+                                  });
+            });
+
+
             services.AddControllersWithViews();
             // In production, the Angular files will be served from this directory
 
@@ -58,6 +71,11 @@ namespace Project2_TCG
             {
                 app.UseSpaStaticFiles();
             }
+
+            ///<summary>
+            ///Enable cors
+            /// </summary>
+            app.UseCors(MyAllowSpecificOrigins);
 
             app.UseRouting();
 

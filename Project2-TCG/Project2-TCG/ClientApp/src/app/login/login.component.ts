@@ -25,7 +25,7 @@ export class LoginComponent {
   }
 
   onClick(username: string, password: string) {
-    this.http.post<any>('https://localhost:44390/api/login/', { username, password }, {
+    this.http.post<any>('/api/login/', { username, password }, {
       headers: new HttpHeaders({
         'Content-Type': 'application/json'
       })
