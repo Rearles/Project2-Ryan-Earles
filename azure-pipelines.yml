@@ -17,6 +17,7 @@ variables:
 stages:
 - stage: Install
   jobs:
+    
     -job: NugetInstall
     steps:
     - task: NuGetToolInstaller@1
@@ -25,11 +26,12 @@ stages:
     - task: NuGetCommand@2
       inputs:
         command: 'restore'
-        restoreSolution: '**/*.sln'
+        restoreSolution: 'Project2-TCG/Project2-TCG.sln'
         feedsToUse: 'select'
 
 - stage: Sonar_API
   jobs:
+    
     -job: Scan
     steps:
       - task: SonarCloudPrepare@1
