@@ -17,3 +17,16 @@
     opacity: 100%;
   }
 }
+
+.deckMessages {
+  height: 105px;
+  width: 100%;
+  background-image: url('../../assets/images/nav.jpg');
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: bold;
+  color: white;
+}

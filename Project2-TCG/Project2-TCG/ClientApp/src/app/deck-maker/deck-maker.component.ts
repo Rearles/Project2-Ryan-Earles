@@ -33,10 +33,11 @@ export class DeckComponent implements OnInit {
       }, error => console.error(error))
     }
   }
-  addToDeck(card: Card) {
+  addToDeck(card: Card, index:number) {
     this.numCards--;
     this.cardName = card.name;
     this.Deck.push(card);
+    this.Cards.splice(index, 1);
     if (this.numCards == 0) {
       this._dataService.setDeck(this.Deck);
       this.router.navigate(['/game']);
