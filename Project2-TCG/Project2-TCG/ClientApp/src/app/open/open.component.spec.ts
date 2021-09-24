@@ -1,24 +1,22 @@
 import { HttpClient, HttpHandler } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { FormsModule } from '@angular/forms';
 
-import { RegisterComponent } from './register.component';
+import { OpenComponent } from './open.component';
 
-describe('RegisterComponent', () => {
-  let component: RegisterComponent;
-  let fixture: ComponentFixture<RegisterComponent>;
+describe('OpenComponent', () => {
+  let component: OpenComponent;
+  let fixture: ComponentFixture<OpenComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [FormsModule],
-      declarations: [RegisterComponent],
+      declarations: [OpenComponent],
       providers: [HttpClient, HttpHandler]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(RegisterComponent);
+    fixture = TestBed.createComponent(OpenComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

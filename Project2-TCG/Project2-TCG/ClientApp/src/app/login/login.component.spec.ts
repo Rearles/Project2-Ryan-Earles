@@ -1,24 +1,25 @@
 import { HttpClient, HttpHandler } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
+import { LoginHeaderComponent } from '../login-header/login-header.component';
 
-import { RegisterComponent } from './register.component';
+import { LoginComponent } from './login.component';
 
-describe('RegisterComponent', () => {
-  let component: RegisterComponent;
-  let fixture: ComponentFixture<RegisterComponent>;
+describe('LoginComponent', () => {
+  let component: LoginComponent;
+  let fixture: ComponentFixture<LoginComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [FormsModule],
-      declarations: [RegisterComponent],
-      providers: [HttpClient, HttpHandler]
+      declarations: [LoginComponent],
+      providers: [HttpClient, HttpHandler, LoginHeaderComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(RegisterComponent);
+    fixture = TestBed.createComponent(LoginComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -27,3 +28,4 @@ describe('RegisterComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+
