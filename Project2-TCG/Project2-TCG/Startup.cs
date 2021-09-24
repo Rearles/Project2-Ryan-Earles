@@ -8,6 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Project2_TCG.Models;
 using Project2_TCG.Models.Entities;
+using System.Diagnostics;
 
 namespace Project2_TCG
 {
@@ -27,7 +28,7 @@ namespace Project2_TCG
             // In production, the Angular files will be served from this directory
 
             services.AddDbContext<cardgameContext>(
-                options => options.UseSqlServer("name=ConnectionStrings:petadmin")
+                options => options.UseSqlServer("name=ConnectionStrings:petadmin").LogTo(message => Debug.WriteLine(message))
             );
 
             services.AddScoped<ICardRepo, CardRepo>();
@@ -51,7 +52,6 @@ namespace Project2_TCG
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
-
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             if (!env.IsDevelopment())
