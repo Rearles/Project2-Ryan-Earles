@@ -38,6 +38,9 @@
 
   <ItemGroup>
     <None Remove="ClientApp\src\app\collection\collection.component.ts" />
+    <None Remove="ClientApp\src\app\deck-maker\deck-maker.component.ts" />
+    <None Remove="ClientApp\src\app\deck-maker\deck-service.ts" />
+    <None Remove="ClientApp\src\app\game\game.component.ts" />
     <None Remove="ClientApp\src\app\login-header\login-header.component.spec.ts" />
     <None Remove="ClientApp\src\app\login-header\login-header.component.ts" />
     <None Remove="ClientApp\src\app\open\open.component.ts" />
@@ -46,6 +49,9 @@
 
   <ItemGroup>
     <TypeScriptCompile Include="ClientApp\src\app\collection\collection.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\deck-maker\deck-maker.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\deck-maker\deck-service.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\game\game.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\login-header\login-header.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\login-header\login-header.component.spec.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\open\open.component.ts" />

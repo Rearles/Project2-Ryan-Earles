@@ -1,0 +1,29 @@
+.playbutton {
+    height: 142px;
+    width: 324px;
+    padding:10px;
+}
+
+.playpage {
+  background-image: url('../../assets/images/vwb6.jpg');
+  height: 100vh;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight:bold;
+  font-size:26px;
+
+}
+.buttonlist {
+  position:absolute;
+  top: 15%;
+  left:45%;
+  width: 50%;
+}
+.easy {
+  background-image: url('../../assets/images/easy.jpg');
+}
+.medium {
+  background-image: url('../../assets/images/medium.jpg');
+}
+.hard {
+  background-image: url('../../assets/images/hard.jpg');
+}
