@@ -10,25 +10,43 @@ pool:
   vmImage: 'windows-latest'
 
 variables:
-  solution: '**/*.sln'
+  solution: 'Project2-TCG/Project2-TCG.sln'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
 
-steps:
-- task: NuGetToolInstaller@1
+stages:
+- stage: Install
+  jobs:
+    -job: NugetInstall
+    steps:
+    - task: NuGetToolInstaller@1
+      inputs:
+        versionSpec: 
+    - task: NuGetCommand@2
+      inputs:
+        command: 'restore'
+        restoreSolution: '**/*.sln'
+        feedsToUse: 'select'
 
-- task: NuGetCommand@2
-  inputs:
-    restoreSolution: '$(solution)'
+- stage: Sonar_API
+  jobs:
+    -job: Scan
+    steps:
+      - task: SonarCloudPrepare@1
+        inputs:
+          organization: '210726-wvu-net-ext 210726-wvu-net-ext'
+          scannerMode: 'MSBuild'
+          projectKey: 'n-Ea210726-wvu-net-ext_P2-Group-1--Ryarles--Liam-Sloan--Sean-Fitzmaurice'
+          projectName: 'P2-Group-1--Ryan-Earles--Liam-Sloan--Sean-Fitzmaurice'
+      - task: DotNetCoreCLI@2
+        inputs:
+          command: 'build'
+      - task: DotNetCoreCLI@2
+        inputs:
+          command: 'test'
+      - task: SonarCloudAnalyze@1
+      - task: SonarCloudPublish@1
+        inputs:
+          pollingTimeoutSec: '300'
 
-- task: VSBuild@1
-  inputs:
-    solution: '$(solution)'
-    msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:DesktopBuildPackageLocation="$(build.artifactStagingDirectory)\WebApp.zip" /p:DeployIisAppPath="Default Web Site"'
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
 
-- task: VSTest@2
-  inputs:
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
