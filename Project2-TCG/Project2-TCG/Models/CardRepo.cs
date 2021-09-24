@@ -1,4 +1,5 @@
 ﻿using Project2_TCG.Models.Entities;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -61,6 +62,7 @@ namespace Project2_TCG.Models
             var color = _context.Colors.Single(c => c.Id == card.Color);
             var rarity = _context.Rarities.Single(r => r.Id == card.Rarity);
             Card foundCard = new Card(card.Id, card.Cost, card.Attack, card.Defense, card.Name, color.Color1, rarity.Rarity1);
+            Log.Debug("We found the card at the rarity of " + foundCard.Rarity + ". At Id of " + foundCard.Id);
             return foundCard;//return that card
             
         }
