@@ -36,7 +36,7 @@ stages:
       steps:
       - task: SonarCloudPrepare@1
         inputs:
-          SonarCloud: SONAR_TOKEN
+          SonarCloud: SONAR
           organization: '210726-wvu-net-ext'
           scannerMode: 'MSBuild'
           projectKey: '210726-wvu-net-ext_P2-Group-1--Ryan-Earles--Liam-Sloan--Sean-Fitzmaurice'
