@@ -54,9 +54,9 @@ namespace Project2_TCG.Controllers
 
         // POST api/<UserController>
         [HttpPost]
-        public void Post([FromBody] CreatedUser user)
+        public CreatedUser Post([FromBody] CreatedUser user)
         {
-            _cardRepo.AddUser(user.username, user.password);
+            return _cardRepo.AddUser(user.username, user.password);
         }
 
         // PUT api/<UserController>/5
