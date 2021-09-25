@@ -14,16 +14,14 @@ namespace Project2_TCG.Controllers
     [ApiController]
     public class LoginController : ControllerBase
     {
-        private cardgameContext _context;
         private ICardRepo _cardRepo;
 
         /// <summary>
         /// Constructor that takes DbContext and the repository as params 
         /// </summary>
         /// <returns></returns>
-        public LoginController(cardgameContext context, ICardRepo cardRepo)
+        public LoginController(ICardRepo cardRepo)
         {
-            _context = context;
             _cardRepo = cardRepo;
         }
 
