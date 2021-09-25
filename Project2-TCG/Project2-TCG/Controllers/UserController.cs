@@ -17,16 +17,14 @@ namespace Project2_TCG.Controllers
         /// <summary>
         /// Instance of DbContext
         /// </summary>
-        private cardgameContext _context;
         private ICardRepo _cardRepo;
 
         /// <summary>
         /// Constructor that takes DbContext and the repository as params 
         /// </summary>
         /// <returns></returns>
-        public UserController(cardgameContext context, ICardRepo cardRepo)
+        public UserController(ICardRepo cardRepo)
         {
-            _context = context;
             _cardRepo = cardRepo;
         }
 

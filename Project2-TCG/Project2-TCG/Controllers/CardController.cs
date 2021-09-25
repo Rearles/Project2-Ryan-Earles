@@ -15,12 +15,10 @@ namespace Project2_TCG.Controllers
     public class CardController : ControllerBase
     {
         private ICardRepo _cardRepo;
-        private cardgameContext _context;
 
-        public CardController(ICardRepo cardRepo, cardgameContext context)
+        public CardController(ICardRepo cardRepo)
         {
             _cardRepo = cardRepo;
-            _context = context;
         }
 
         // GET: api/<CardController>
