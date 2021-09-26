@@ -56,6 +56,7 @@ stages:
         inputs:
           command: 'test'
           project: 'Project2-TCG/Project2-TCG/ClientApp'
+          arguments: '--watch=true'
           DisableAnalytics: true
 
       - task: SonarCloudAnalyze@1
