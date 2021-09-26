@@ -44,7 +44,7 @@ stages:
       - script: dotnet build --configuration Release
         displayName: dotnet build
         workingDirectory: 'Project2-TCG'
-      - script: npm install --configuration Release
+      - script: npm install
         displayName: npm install
         workingDirectory: 'Project2-TCG'
       - task: AngularCLI@1
