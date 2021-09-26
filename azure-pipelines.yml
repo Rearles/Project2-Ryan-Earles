@@ -46,9 +46,15 @@ stages:
         workingDirectory: 'Project2-TCG'
       - task: AngularCLI@1
         inputs:
-            command: 'build'
-            project: 'Project2-TCG/Project2-TCG/ClientApp'
-            DisableAnalytics: true
+          command: 'custom'
+          project: 'Project2-TCG/Project2-TCG/ClientApp'
+          custom: 'npm install'
+          DisableAnalytics: true
+      - task: AngularCLI@1
+        inputs:
+           command: 'build'
+           project: 'Project2-TCG/Project2-TCG/ClientApp'
+           DisableAnalytics: true
       - task: SonarCloudAnalyze@1
 
       - task: SonarCloudPublish@1
