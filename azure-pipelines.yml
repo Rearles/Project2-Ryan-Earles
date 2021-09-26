@@ -48,8 +48,8 @@ stages:
         inputs:
           command: 'custom'
           project: 'Project2-TCG/Project2-TCG/ClientApp'
-          custom: 'npx npm install'
-          DisableAnalytics: true
+          custom: 'npm npm install'
+          DisableAnalytics: false
       - task: AngularCLI@1
         inputs:
            command: 'build'
