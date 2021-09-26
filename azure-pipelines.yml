@@ -46,7 +46,7 @@ stages:
         workingDirectory: 'Project2-TCG'
       - script: npm install
         displayName: npm install
-        workingDirectory: 'Project2-TCG'
+        workingDirectory: 'Project2-TCG/Project2-TCG/ClientApp'
       - task: AngularCLI@1
         inputs:
            command: 'build'
