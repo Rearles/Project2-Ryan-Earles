@@ -62,7 +62,7 @@ namespace Project2_TCG.Models
         /// <summary>
         /// update the amount of currency a given user has
         /// </summary>
-        public void UpdateUserCurrency(User user);
+        public void UpdateUserCurrency(User user, int currency, bool plusminus);
         /// <summary>
         /// filter cards by a certain rarity and return a list of matching cards
         /// </summary>

@@ -128,9 +128,22 @@ namespace Project2_TCG.Models
             return foundCard;
         }
 
-        void ICardRepo.UpdateUserCurrency(User user)
+        void ICardRepo.UpdateUserCurrency(User user, int currency, bool plusminus)
         {
-            throw new NotImplementedException();
+            var founduser = _context.Users.Single(u => u.Id == user.Id);
+            if (founduser != null)
+            {
+                if (plusminus == true)
+                {
+                    founduser.Currency = founduser.Currency + currency;
+                    _context.Update(founduser);
+                }
+                else if (plusminus == false)
+                {
+                    founduser.Currency = founduser.Currency - currency;
+                }
+            }
+            
         }
 
         public User SearchUserById(int id)
