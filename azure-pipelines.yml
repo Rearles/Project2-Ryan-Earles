@@ -47,6 +47,9 @@ stages:
       - script: npm install
         displayName: npm install
         workingDirectory: 'Project2-TCG/Project2-TCG/ClientApp'
+      - script: npm install karma
+        displayName: npm install karma
+        workingDirectory: 'Project2-TCG/Project2-TCG/ClientApp'
       - task: AngularCLI@1
         inputs:
            command: 'build'
