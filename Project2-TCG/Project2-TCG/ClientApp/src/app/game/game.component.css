@@ -1,4 +1,6 @@
 .game-board {
+  background-image: url('../../assets/images/vwb5.jpg');
+  background-repeat: repeat;
 }
 
 .concede-button{
@@ -6,5 +8,62 @@
 }
 
 .player-hand{
-
+    display: table;
+    bottom:0%;
 }
+
+.description{
+    position:absolute;
+    top:20%;
+    left:5%
+}
+
+.playerCard{
+    position: absolute;
+    top:30%
+}
+
+.enemyCardPlay{
+  position:absolute;
+  bottom:30%;
+}
+
+.playerDeck {
+  background-image: url('../../assets/images/card back.jpg');
+  position: absolute;
+  right: 5%;
+  bottom: 10%;
+  height:400px;
+  width: 300px;
+}
+
+.enemyDeck {
+  background-image: url('../../assets/images/card back.jpg');
+  position: absolute;
+  right: 5%;
+  bottom: 10%;
+  height: 400px;
+  width: 300px;
+}
+.enemyCard {
+  background-image: url('../../assets/images/card back.jpg');
+  height: 400px;
+  width: 300px;
+}
+.enemyHand {
+  display: table;
+  top:15%;
+}
+
+.playerStatus{
+    position: absolute;
+    bottom: 15%;
+    left:5%;
+}
+
+.enemyStatus{
+    position:absolute;
+    top:25%;
+    left:5%;
+}
+
