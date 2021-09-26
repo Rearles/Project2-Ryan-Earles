@@ -44,7 +44,13 @@ stages:
       - script: dotnet build --configuration Release
         displayName: dotnet build
         workingDirectory: 'Project2-TCG'
+      - task: AngularCLI@1
+        inputs:
+            command: 'build'
+            project: 'Project2-TCG/Project2-TCG/ClientApp'
+            DisableAnalytics: true
       - task: SonarCloudAnalyze@1
+
       - task: SonarCloudPublish@1
         inputs:
           pollingTimeoutSec: '300'
