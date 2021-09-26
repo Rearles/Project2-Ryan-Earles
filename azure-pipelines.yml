@@ -54,10 +54,10 @@ stages:
            DisableAnalytics: true
       - task: AngularCLI@1
         inputs:
-          command: 'test'
-          project: 'Project2-TCG/Project2-TCG/ClientApp'
-          arguments: '--watch=true'
-          DisableAnalytics: true
+            command: 'test'
+            project: 'Project2-TCG/Project2-TCG/ClientApp'
+            debug: true
+            DisableAnalytics: false
 
       - task: SonarCloudAnalyze@1
 
