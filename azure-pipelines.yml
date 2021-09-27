@@ -5,7 +5,7 @@
 
 trigger:
 - main
-- PipelineFix
+- Pipeline
 
 pool:
   vmImage: 'windows-latest'
