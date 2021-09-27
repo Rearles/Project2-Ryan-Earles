@@ -57,7 +57,6 @@ namespace TCG_xunit
 
                 string expected = "testingGuy2";
                 string result = userController.Username("testingGuy2");
-
                 Assert.Equal(expected, result);
             }
         }
