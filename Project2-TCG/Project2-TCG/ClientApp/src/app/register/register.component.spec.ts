@@ -1,6 +1,7 @@
 import { HttpClient, HttpHandler } from '@angular/common/http';
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
+import { By } from '@angular/platform-browser';
 
 import { RegisterComponent } from './register.component';
 
@@ -26,4 +27,13 @@ describe('RegisterComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should', async(() => {
+    spyOn(component, 'onClick');
+    let button = fixture.debugElement.query(By.css('#registerButton'));
+    button.triggerEventHandler('click', null);
+    fixture.whenStable().then(() => {
+      expect(component.onClick).toHaveBeenCalled();
+    })
+  }))
 });
