@@ -7,8 +7,6 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
-import { CounterComponent } from './counter/counter.component';
-import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { LoginComponent } from './login/login.component';
 import { PlayComponent } from './play/play.component';
 import { OpenComponent } from './open/open.component';
@@ -22,14 +20,13 @@ import { DeckComponent } from './deck-maker/deck-maker.component';
 import { DeckService } from './deck-maker/deck-service';
 import { ResultService } from './result/result-service'; 
 import { ResultComponent } from './result/result-component';
+import { RulesComponent } from './rules/rules.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavMenuComponent,
     HomeComponent,
-    CounterComponent,
-    FetchDataComponent,
     LoginComponent,
     PlayComponent,
     OpenComponent,
@@ -40,6 +37,7 @@ import { ResultComponent } from './result/result-component';
     GameComponent,
     DeckComponent,
     ResultComponent,
+    RulesComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -47,8 +45,6 @@ import { ResultComponent } from './result/result-component';
     FormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'counter', component: CounterComponent },
-      { path: 'fetch-data', component: FetchDataComponent },
       { path: 'login', component: LoginComponent },
       { path: 'play', component: PlayComponent },
       { path: 'open', component: OpenComponent },
@@ -57,6 +53,7 @@ import { ResultComponent } from './result/result-component';
       { path: 'game', component: GameComponent },
       { path: 'deck', component: DeckComponent },
       { path: 'result', component: ResultComponent },
+      { path: 'rules', component: RulesComponent },
 ], { relativeLinkResolution: 'legacy' })
   ],
   providers: [Card, LoginComponent, LoginHeaderComponent, RegisterComponent, DeckService, ResultService],
