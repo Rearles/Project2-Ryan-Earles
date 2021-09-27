@@ -27,6 +27,7 @@ export class GameComponent implements OnInit{
   Win: number; //0 = loss 1 = tie 2 = win
   cardsRemaining: number = 10;
   draw: number;
+  going: boolean = false;
 
   constructor(private _dataService: DeckService, private http: HttpClient, private _resServe: ResultService, private router: Router) {
 
@@ -65,21 +66,23 @@ export class GameComponent implements OnInit{
   }
 
   playCard(card: Card, index: number) {
-    if (this.currentPlayerCard.id == -1) {
-      if (card.cost <= this.playerMana) {
-        this.currentPlayerCard = card;
-        this.Hand.splice(index, 1);
-        this.playerMana = this.playerMana - card.cost;
-        this.descriptionText = "You played " + card.name;
-        this.enemyTurn();    
-        this.turnNumber++;
-      } else {
-        this.descriptionText = "Not enough Mana!"
-      }
+    if (!this.going) {
+      if (this.currentPlayerCard.id == -1) {
+        if (card.cost <= this.playerMana) {
+          this.currentPlayerCard = card;
+          this.Hand.splice(index, 1);
+          this.playerMana = this.playerMana - card.cost;
+          this.descriptionText = "You played " + card.name;
+          this.enemyTurn();
+          this.turnNumber++;
+        } else {
+          this.descriptionText = "Not enough Mana!"
+        }
 
-    } else {
-      this.descriptionText = "Already have a card in play!";
-    }
+      } else {
+        this.descriptionText = "Already have a card in play!";
+      }
+  }
   }
   playerDraw() {
     if (this.cardsRemaining > 0 && this.Hand.length < 5) {
@@ -109,8 +112,13 @@ export class GameComponent implements OnInit{
 
   //an enemys half of the turn, can play a card, or attack players card/player
   //draw a card every turn
+ sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
 
-  enemyTurn() {
+  async enemyTurn() {
+    this.going = true;
+    await this.sleep(3000);
     if (this.cardsRemaining > 0) {
       try {
         let resp = this.http.get("/api/game/card/" + this.difficulty);
@@ -139,20 +147,26 @@ export class GameComponent implements OnInit{
         this.attackPlayer();
       }
     }
-
+    this.going = false;
     this.playerTurn();
   }
 
   endTurn() {
-    this.turnNumber++;
-    this.enemyTurn();
+    if (!this.going) {
+      this.turnNumber++;
+      this.enemyTurn();
+    }
   }
 
+  Concede() {
+    this.Win = 0;
+    this.checkWin();
+  }
   //enemy card attack is subtracted from player card health, and player card attack is subtracted from enemy card
   CardBattle() {
     this.currentEnemyCard.defense -= this.currentPlayerCard.attack;
     this.currentPlayerCard.defense -= this.currentEnemyCard.attack;
-    this.descriptionText = this.currentEnemyCard.name + "fought" + this.currentPlayerCard.name;
+    this.descriptionText = this.currentEnemyCard.name + " fought " + this.currentPlayerCard.name+"!";
     if (this.currentEnemyCard.defense < 1) {
       this.emptyEnemyCard();
     }
@@ -162,12 +176,14 @@ export class GameComponent implements OnInit{
   }
 
   CardBattlePlayer() {
-    if (this.currentPlayerCard.id != -1 || this.currentEnemyCard.id != -1) {
-      this.CardBattle();
-      this.enemyTurn();
-      this.turnNumber++;
-    } else {
-      this.descriptionText = "No Card in Play!";
+    if (!this.going) {
+      if (this.currentPlayerCard.id != -1 || this.currentEnemyCard.id != -1) {
+        this.CardBattle();
+        this.enemyTurn();
+        this.turnNumber++;
+      } else {
+        this.descriptionText = "No Card in Play!";
+      }
     }
 
   }
@@ -185,18 +201,20 @@ export class GameComponent implements OnInit{
 
   //attack an enemys health pool with current card, this removes the current card from play (empty instance)
   attackEnemy() {
-    if (this.currentPlayerCard.id != -1) {
-      this.enemyHealth -= this.currentPlayerCard.attack;
-      this.descriptionText = "You attacked with " + this.currentPlayerCard.name;
-      this.emptyPlayerCard();
-      if (this.enemyHealth < 0) {
-        this.Win = 2;
+    if (!this.going) {
+      if (this.currentPlayerCard.id != -1) {
+        this.enemyHealth -= this.currentPlayerCard.attack;
+        this.descriptionText = "You attacked with " + this.currentPlayerCard.name;
+        this.emptyPlayerCard();
+        if (this.enemyHealth < 0) {
+          this.Win = 2;
+        }
+        this.checkWin();
+        this.enemyTurn();
+        this.turnNumber++;
+      } else {
+        this.descriptionText = "No Card in play!";
       }
-      this.checkWin();
-      this.enemyTurn();
-      this.turnNumber++;
-    } else {
-      this.descriptionText = "No Card in play!";
     }
 
   }

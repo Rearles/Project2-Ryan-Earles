@@ -9,12 +9,18 @@
 }
 
 .concede-button{
-
+    position:absolute;
+    background-color:black;
+    color:white;
+    top:10%;
+    left:2%;
+    height:40px;
+    width:140px;
 }
 .end-turn {
   position: absolute;
   left: 15%;
-  top: 45%;
+  top: 70%;
 }
 
 .enemy-face {
@@ -33,24 +39,27 @@
 .player-hand {
   position: absolute;
   display: flex;
-  bottom: -10%;
+  bottom: -8%;
   justify-content: center;
 }
 
 .description {
   position: absolute;
-  top: 20%;
-  left: 10%
+  top: 40%;
+  left: 3%;
+  font-size:60px;
+  color:white;
+  font-weight:bold;
 }
 
 .playerCard {
   position: absolute;
-  bottom: 20%
+  bottom: 23%
 }
 
 .enemyCardPlay {
   position: absolute;
-  top: 17%;
+  top: 13%;
 }
 
 .playerDeck {
@@ -89,6 +98,6 @@
 .enemyStatus {
   position: absolute;
   top: 25%;
-  left: 30%;
+  left: 36%;
 }
 
