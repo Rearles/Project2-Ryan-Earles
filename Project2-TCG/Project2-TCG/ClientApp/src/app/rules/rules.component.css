@@ -1,0 +1,13 @@
+.bg-rules {
+  background-image: url('../../assets/images/vwb6.jpg');
+  background-repeat: repeat;
+  font-family: 'Josefin Sans', sans-serif;
+  box-shadow: 0 0 8px 8px black inset;
+  font-size: 40px;
+  height: 100vh;
+  justify-content: center;
+}
+.rules{
+    color:white;
+    top:25%;
+}

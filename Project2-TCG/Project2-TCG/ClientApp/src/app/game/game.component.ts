@@ -57,7 +57,7 @@ export class GameComponent implements OnInit{
     } else if (this.difficulty == "Medium") {
       this.enemyHealth = 25;
     } else if (this.difficulty == "Hard") {
-      this.enemyHealth = 35;
+      this.enemyHealth = 30;
     } else {
       //no difficulty given, return to home
     }
@@ -191,7 +191,7 @@ export class GameComponent implements OnInit{
   //attack a players health pool with current card, this removes the current card from play (empty instance)
   attackPlayer() {
     this.playerHealth -= this.currentEnemyCard.attack;
-    this.descriptionText = "You were attaced by " + this.currentEnemyCard.name;
+    this.descriptionText = "You were attacked by " + this.currentEnemyCard.name;
     this.emptyEnemyCard();  
     if (this.playerHealth < 0) {
       this.Win = 0;
