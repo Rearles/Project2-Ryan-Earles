@@ -48,6 +48,12 @@ stages:
       - script: npm install
         displayName: npm install
         workingDirectory: 'Project2-TCG/Project2-TCG/ClientApp'
+      - task: DotNetCoreCLI@2
+        inputs:
+          command: 'test'
+          projects: 'Project2-TCG'
+          arguments: '--collect "Code coverage"'
+          testRunTitle: 'DotnetTest'
       - task: AngularCLI@1
         inputs:
            command: 'build'
