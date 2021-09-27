@@ -39,19 +39,19 @@ namespace Project2_TCG.Controllers
                 //70% towards common, 15% towards uncommon, 10% towards rare 5% mega rare
                 if (selection >= 1 && selection <= 70)
                 {
-                    card = card = getrandomcard(1);
+                    card = getrandomcard(1);
                 }
                 else if (selection >= 71 && selection <= 85)
                 {
-                    card = card = getrandomcard(2);
+                    card = getrandomcard(2);
                 }
                 else if (selection >= 86 && selection <= 95)
                 {
-                    card = card = getrandomcard(3);
+                    card = getrandomcard(3);
                 }
                 else if (selection >= 95 && selection <= 100)
                 {
-                    card = card = getrandomcard(4);
+                    card = getrandomcard(4);
                 }
 
             }
@@ -61,19 +61,19 @@ namespace Project2_TCG.Controllers
                 //20% common, 25% towards uncommon, 20% rare, 25% mega rare
                 if (selection >= 1 && selection <= 20)
                 {
-                    card = card = getrandomcard(1);
+                    card = getrandomcard(1);
                 }
                 else if (selection >= 21 && selection <= 45)
                 {
-                    card = card = getrandomcard(2);
+                    card = getrandomcard(2);
                 }
                 else if (selection >= 46 && selection <= 65)
                 {
-                    card = card = getrandomcard(3);
+                    card = getrandomcard(3);
                 }
                 else if (selection >= 66 && selection <= 100)
                 {
-                    card = card = getrandomcard(4);
+                    card = getrandomcard(4);
                 }
 
             }
@@ -82,15 +82,15 @@ namespace Project2_TCG.Controllers
                 //5% common, 10% uncommon, 25% rare, 60% mega rare
                 if (selection >= 1 && selection <= 5)
                 {
-                    card = card = getrandomcard(1);
+                    card = getrandomcard(1);
                 }
                 else if (selection >= 6 && selection <= 15)
                 {
-                    card = card = getrandomcard(2);
+                    card = getrandomcard(2);
                 }
                 else if (selection >= 16 && selection <= 40)
                 {
-                    card = card = getrandomcard(3);
+                    card = getrandomcard(3);
                 }
                 else if (selection >= 41 && selection <= 100)
                 {
