@@ -1,31 +1,56 @@
 .game-board {
-  background-image: url('../../assets/images/vwb5.jpg');
-  background-repeat: repeat;
+  background-image: url('../../assets/images/vwb4.jpg');
+  height: 100vh;
+  font-family: 'Josefin Sans', sans-serif;
+  box-shadow: 0 0 8px 8px black inset;
+  display:flex;
+  justify-content:center;
+  font-size:30px;
 }
 
 .concede-button{
 
 }
-
-.player-hand{
-    display: table;
-    bottom:0%;
+.end-turn {
+  position: absolute;
+  left: 15%;
+  top: 45%;
 }
 
-.description{
-    position:absolute;
-    top:20%;
-    left:5%
+.enemy-face {
+  background-color: red;
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  left: 35%;
+  top: 10%
 }
 
-.playerCard{
-    position: absolute;
-    top:30%
+.turn-counter {
+  position: absolute;
+  left: 10%;
+}
+.player-hand {
+  position: absolute;
+  display: flex;
+  bottom: -10%;
+  justify-content: center;
 }
 
-.enemyCardPlay{
-  position:absolute;
-  bottom:30%;
+.description {
+  position: absolute;
+  top: 20%;
+  left: 10%
+}
+
+.playerCard {
+  position: absolute;
+  bottom: 20%
+}
+
+.enemyCardPlay {
+  position: absolute;
+  top: 17%;
 }
 
 .playerDeck {
@@ -33,7 +58,7 @@
   position: absolute;
   right: 5%;
   bottom: 10%;
-  height:400px;
+  height: 400px;
   width: 300px;
 }
 
@@ -55,15 +80,15 @@
   top:15%;
 }
 
-.playerStatus{
-    position: absolute;
-    bottom: 15%;
-    left:5%;
+.playerStatus {
+  position: absolute;
+  bottom: 15%;
+  left: 5%;
 }
 
-.enemyStatus{
-    position:absolute;
-    top:25%;
-    left:5%;
+.enemyStatus {
+  position: absolute;
+  top: 25%;
+  left: 30%;
 }
 

@@ -45,6 +45,8 @@
     <None Remove="ClientApp\src\app\login-header\login-header.component.ts" />
     <None Remove="ClientApp\src\app\open\open.component.ts" />
     <None Remove="ClientApp\src\app\play\play.component.ts" />
+    <None Remove="ClientApp\src\app\result\result-component.ts" />
+    <None Remove="ClientApp\src\app\result\result-service.ts" />
   </ItemGroup>
 
   <ItemGroup>
@@ -56,6 +58,8 @@
     <TypeScriptCompile Include="ClientApp\src\app\login-header\login-header.component.spec.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\open\open.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\play\play.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\result\result-component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\result\result-service.ts" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
