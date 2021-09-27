@@ -1,5 +1,6 @@
 import { HttpClient, HttpHandler } from '@angular/common/http';
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
 
 import { OpenComponent } from './open.component';
 
@@ -24,4 +25,12 @@ describe('OpenComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should', async(() => {
+    spyOn(component, 'onClick');
+    let button = fixture.debugElement.query(By.css('#openButton'));
+    button.triggerEventHandler('click', null);
+    fixture.whenStable().then(() => {
+      expect(component.onClick).toHaveBeenCalled();
+    })
 });

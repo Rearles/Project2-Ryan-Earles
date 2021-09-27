@@ -20,7 +20,7 @@
         <div class="alert alert-danger" *ngIf="!username.valid && username.touched">Password is required</div>
       </div>
       <div>
-        <button [disabled]="!registerForm.form.valid" class="btn btn-dark" (click)="onClick(username.value, password.value)">Create Account</button>
+        <button [disabled]="!registerForm.form.valid" class="btn btn-dark" id="registerButton" (click)="onClick(username.value, password.value)">Create Account</button>
       </div>
     </form>
   </div>
