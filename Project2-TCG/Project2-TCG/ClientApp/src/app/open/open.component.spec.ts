@@ -33,4 +33,5 @@ describe('OpenComponent', () => {
     fixture.whenStable().then(() => {
       expect(component.onClick).toHaveBeenCalled();
     })
+  }))
 });
