@@ -1,1 +1,22 @@
-<h1>This is a(n) {{ difficulty }} game</h1>
+<div class="game-board">
+  <p>Turn Number = {{turnNumber}}</p>
+  <p class="description">{{descriptionText}}</p>
+  <div class="enemyStatus">
+    <a>Health: {{enemyHealth}}</a>
+  </div>
+  <button class="end-turn" (click)="endTurn()">End Turn</button>
+  <button class="enemy-face" (click)="attackEnemy()">Attack!</button>
+  <app-card class="enemyCardPlay" [card]="currentEnemyCard" (click)="CardBattlePlayer()"></app-card>
+  <app-card class="playerCard" [card]="currentPlayerCard"></app-card>
+  <div class="player-hand">
+    <app-card *ngFor="let card of Hand; let indexOfelement=index" [card]="card" (click)="playCard(card, indexOfelement)"></app-card>
+  </div>
+  <div class="playerStatus">
+    <a>Health: {{playerHealth}}</a>
+    <a> | Mana: {{playerMana}}</a>
+  </div>
+
+
+
+
+</div>

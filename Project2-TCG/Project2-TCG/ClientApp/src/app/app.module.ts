@@ -20,6 +20,8 @@ import { LoginHeaderComponent } from './login-header/login-header.component';
 import { GameComponent } from './game/game.component';
 import { DeckComponent } from './deck-maker/deck-maker.component';
 import { DeckService } from './deck-maker/deck-service';
+import { ResultService } from './result/result-service'; 
+import { ResultComponent } from './result/result-component';
 
 @NgModule({
   declarations: [
@@ -37,6 +39,7 @@ import { DeckService } from './deck-maker/deck-service';
     LoginHeaderComponent,
     GameComponent,
     DeckComponent,
+    ResultComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -53,9 +56,10 @@ import { DeckService } from './deck-maker/deck-service';
       { path: 'register', component: RegisterComponent },
       { path: 'game', component: GameComponent },
       { path: 'deck', component: DeckComponent },
+      { path: 'result', component: ResultComponent },
 ], { relativeLinkResolution: 'legacy' })
   ],
-  providers: [Card, LoginComponent, LoginHeaderComponent, RegisterComponent, DeckService],
+  providers: [Card, LoginComponent, LoginHeaderComponent, RegisterComponent, DeckService, ResultService],
 
   bootstrap: [AppComponent]
 })

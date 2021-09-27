@@ -1,0 +1,9 @@
+.resultPage {
+  background-image: url('../../assets/images/vwb4.jpg');
+  height: 100vh;
+  font-family: 'Josefin Sans', sans-serif;
+  box-shadow: 0 0 8px 8px black inset;
+  display: flex;
+  justify-content: center;
+  font-size: 70px;
+}
