@@ -1,5 +1,6 @@
 # P2-Group-1--Ryan-Earles--Liam-Sloan--Sean-Fitzmaurice
 Project 2 - TCG Angular Application
+Here's the original project: https://github.com/210726-wvu-net-ext/P2-Group-1--Ryan-Earles--Liam-Sloan--Sean-Fitzmaurice
 
 - Angular single-page application
     - proper use of Angular abstractions (component, service injection, data binding, & HttpClient)
