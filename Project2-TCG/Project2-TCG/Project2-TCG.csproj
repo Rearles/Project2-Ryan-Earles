@@ -31,12 +31,8 @@
 
   <ItemGroup>
     <!-- Don't publish the SPA source files, but do show them in the project files list -->
-    <Compile Remove="ClientApp\src\coverage\**" />
     <Content Remove="$(SpaRoot)**" />
-    <Content Remove="ClientApp\src\coverage\**" />
-    <EmbeddedResource Remove="ClientApp\src\coverage\**" />
     <None Remove="$(SpaRoot)**" />
-    <None Remove="ClientApp\src\coverage\**" />
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
   </ItemGroup>
 
@@ -51,59 +47,6 @@
     <None Remove="ClientApp\src\app\play\play.component.ts" />
     <None Remove="ClientApp\src\app\result\result-component.ts" />
     <None Remove="ClientApp\src\app\result\result-service.ts" />
-    <None Remove="ClientApp\src\coverage\project2-app\base.css" />
-    <None Remove="ClientApp\src\coverage\project2-app\block-navigation.js" />
-    <None Remove="ClientApp\src\coverage\project2-app\favicon.png" />
-    <None Remove="ClientApp\src\coverage\project2-app\index.html" />
-    <None Remove="ClientApp\src\coverage\project2-app\lcov-report\base.css" />
-    <None Remove="ClientApp\src\coverage\project2-app\lcov-report\block-navigation.js" />
-    <None Remove="ClientApp\src\coverage\project2-app\lcov-report\favicon.png" />
-    <None Remove="ClientApp\src\coverage\project2-app\lcov-report\index.html" />
-    <None Remove="ClientApp\src\coverage\project2-app\lcov-report\prettify.css" />
-    <None Remove="ClientApp\src\coverage\project2-app\lcov-report\prettify.js" />
-    <None Remove="ClientApp\src\coverage\project2-app\lcov-report\sort-arrow-sprite.png" />
-    <None Remove="ClientApp\src\coverage\project2-app\lcov-report\sorter.js" />
-    <None Remove="ClientApp\src\coverage\project2-app\lcov-report\src\app\collection\collection.component.ts.html" />
-    <None Remove="ClientApp\src\coverage\project2-app\lcov-report\src\app\collection\index.html" />
-    <None Remove="ClientApp\src\coverage\project2-app\lcov-report\src\app\counter\counter.component.ts.html" />
-    <None Remove="ClientApp\src\coverage\project2-app\lcov-report\src\app\counter\index.html" />
-    <None Remove="ClientApp\src\coverage\project2-app\lcov-report\src\app\home\home.component.ts.html" />
-    <None Remove="ClientApp\src\coverage\project2-app\lcov-report\src\app\home\index.html" />
-    <None Remove="ClientApp\src\coverage\project2-app\lcov-report\src\app\login-header\index.html" />
-    <None Remove="ClientApp\src\coverage\project2-app\lcov-report\src\app\login-header\login-header.component.ts.html" />
-    <None Remove="ClientApp\src\coverage\project2-app\lcov-report\src\app\login\index.html" />
-    <None Remove="ClientApp\src\coverage\project2-app\lcov-report\src\app\login\login.component.ts.html" />
-    <None Remove="ClientApp\src\coverage\project2-app\lcov-report\src\app\nav-menu\index.html" />
-    <None Remove="ClientApp\src\coverage\project2-app\lcov-report\src\app\nav-menu\nav-menu.component.ts.html" />
-    <None Remove="ClientApp\src\coverage\project2-app\lcov-report\src\app\open\index.html" />
-    <None Remove="ClientApp\src\coverage\project2-app\lcov-report\src\app\open\open.component.ts.html" />
-    <None Remove="ClientApp\src\coverage\project2-app\lcov-report\src\app\register\index.html" />
-    <None Remove="ClientApp\src\coverage\project2-app\lcov-report\src\app\register\register.component.ts.html" />
-    <None Remove="ClientApp\src\coverage\project2-app\lcov-report\src\index.html" />
-    <None Remove="ClientApp\src\coverage\project2-app\lcov-report\src\test.ts.html" />
-    <None Remove="ClientApp\src\coverage\project2-app\lcov.info" />
-    <None Remove="ClientApp\src\coverage\project2-app\prettify.css" />
-    <None Remove="ClientApp\src\coverage\project2-app\prettify.js" />
-    <None Remove="ClientApp\src\coverage\project2-app\sort-arrow-sprite.png" />
-    <None Remove="ClientApp\src\coverage\project2-app\sorter.js" />
-    <None Remove="ClientApp\src\coverage\project2-app\src\app\collection\collection.component.ts.html" />
-    <None Remove="ClientApp\src\coverage\project2-app\src\app\collection\index.html" />
-    <None Remove="ClientApp\src\coverage\project2-app\src\app\counter\counter.component.ts.html" />
-    <None Remove="ClientApp\src\coverage\project2-app\src\app\counter\index.html" />
-    <None Remove="ClientApp\src\coverage\project2-app\src\app\home\home.component.ts.html" />
-    <None Remove="ClientApp\src\coverage\project2-app\src\app\home\index.html" />
-    <None Remove="ClientApp\src\coverage\project2-app\src\app\login-header\index.html" />
-    <None Remove="ClientApp\src\coverage\project2-app\src\app\login-header\login-header.component.ts.html" />
-    <None Remove="ClientApp\src\coverage\project2-app\src\app\login\index.html" />
-    <None Remove="ClientApp\src\coverage\project2-app\src\app\login\login.component.ts.html" />
-    <None Remove="ClientApp\src\coverage\project2-app\src\app\nav-menu\index.html" />
-    <None Remove="ClientApp\src\coverage\project2-app\src\app\nav-menu\nav-menu.component.ts.html" />
-    <None Remove="ClientApp\src\coverage\project2-app\src\app\open\index.html" />
-    <None Remove="ClientApp\src\coverage\project2-app\src\app\open\open.component.ts.html" />
-    <None Remove="ClientApp\src\coverage\project2-app\src\app\register\index.html" />
-    <None Remove="ClientApp\src\coverage\project2-app\src\app\register\register.component.ts.html" />
-    <None Remove="ClientApp\src\coverage\project2-app\src\index.html" />
-    <None Remove="ClientApp\src\coverage\project2-app\src\test.ts.html" />
   </ItemGroup>
 
   <ItemGroup>
