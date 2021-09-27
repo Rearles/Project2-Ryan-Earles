@@ -32,7 +32,7 @@
 
 .opened-card {
   animation-duration: 3s;
-  animation: fade-in;
+  animation-name: fade-in;
 }
 @keyframes fade-in {
   0% {
