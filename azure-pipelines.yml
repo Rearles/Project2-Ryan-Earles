@@ -63,7 +63,7 @@ stages:
             command: 'test'
             project: 'Project2-TCG/Project2-TCG/ClientApp'
             debug: true
-            arguments: "-codeCoverage=true"
+            arguments: "--codeCoverage=true"
             DisableAnalytics: false
 
       - task: SonarCloudAnalyze@1
