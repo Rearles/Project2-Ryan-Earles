@@ -14,7 +14,7 @@
         <div class="alert alert-danger" *ngIf="!username.valid && username.touched">Password is required</div>
       </div>
       <div>
-        <button [disabled]="!loginForm.form.valid" class="btn btn-dark" (click)="onClick(username.value, password.value)">Login</button>
+        <button [disabled]="!loginForm.form.valid" id="loginButton" class="btn btn-dark" (click)="onClick(username.value, password.value)">Login</button>
         <button class="btn btn-dark" (click)="logout()">Logout</button>
       </div>
     </form>

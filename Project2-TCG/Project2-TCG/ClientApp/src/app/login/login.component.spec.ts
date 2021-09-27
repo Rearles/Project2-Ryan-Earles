@@ -1,6 +1,7 @@
 import { HttpClient, HttpHandler } from '@angular/common/http';
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed, tick } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
+import { By } from '@angular/platform-browser';
 import { LoginHeaderComponent } from '../login-header/login-header.component';
 
 import { LoginComponent } from './login.component';
@@ -27,5 +28,14 @@ describe('LoginComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should', async(() => {
+    spyOn(component, 'onClick');
+    let button = fixture.debugElement.query(By.css('#loginButton'));
+    button.triggerEventHandler('click', null);
+    fixture.whenStable().then(() => {
+      expect(component.onClick).toHaveBeenCalled();
+    })
+  }))
 });
 
